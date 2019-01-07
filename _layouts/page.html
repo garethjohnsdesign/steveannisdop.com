@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<!-- Page Image -->
+{% if page.image %}
+<section class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="small-12 cell">
+
+      {% assign image = page.image %}
+      <div data-interchange="{% include images/interchange-img-small-12-medium-12-cell.html %}" class="light-gray-background image">
+        {% if page.video %}
+        <div class="grid-y height-100 align-center video content">
+          <div class="shrink cell text-center" data-src="{{page.video}}">
+            <a href="{{page.video}}" class="white"><svg class="icon icon-play_arrow"><use xlink:href="/assets/icons/symbol-defs.svg#icon-play_arrow"></use></svg></a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- End Page Image -->
+
+<!-- Meta -->
+<div class="grid-container">
+ <div class="grid-x grid-padding-x grid-padding-y align-center">
+  <div class="small-12 medium-10 cell text-center">
+    
+<!--   	<div class="secondary-color margin-bottom-1">{% if page.client %}{{ page.client }} — {% endif %} {{ page.title }}</div> -->
+
+    {% if page.director %}
+  	<div>Director</div>
+    <div class="secondary-color margin-bottom-1">
+    {{ page.director }}
+    </div>
+    {% endif %}
+
+    {% if page.producer %}
+  	<div>Producer</div>
+    <div class="secondary-color margin-bottom-1">
+    {{ page.producer }}
+    </div>
+    {% endif %}
+
+    {% if page.production-company %}
+  	<div>Production Company</div>
+    <div class="secondary-color margin-bottom-1">
+    {{ page.production-company }}
+    </div>
+    {% endif %}
+
+    {% if page.awards %}
+  	<div>Awards</div>
+    <div class="secondary-color margin-bottom-1">
+    {% for award in page.awards %}
+    <div>{{ award }}</div>
+    {% endfor %}
+    </div>
+    {% endif %}
+  	
+  </div>
+ </div>
+</div>
+<!-- End Meta -->

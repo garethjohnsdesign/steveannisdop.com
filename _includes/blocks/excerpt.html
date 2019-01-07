@@ -1,0 +1,7 @@
+<div class="small-12 medium-6 {% if project.is-full-width %}medium-12{% endif %} cell">
+  <a href="{{ project.url }}">
+    {% assign image = project.image %}
+    <div class="margin-bottom-2 light-gray-background excerpt" data-interchange="{% include images/interchange-img-small-12-medium-12-cell.html %}"></div>
+    <h4 class="sans-regular white">{{ project.client }} <span class="dark-gray">{{ project.title }}</span></h4>
+  </a>
+</div>
