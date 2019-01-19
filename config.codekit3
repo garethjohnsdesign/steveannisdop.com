@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/.gitattributes": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/.gitattributes",
+		"oF": 0
+		},
 	"/404.md": {
 		"cB": 0,
 		"cS": 0,
@@ -930,25 +937,25 @@
 		"oAP": "/assets/fonts/messina-sans-regular.woff2",
 		"oF": 0
 		},
-	"/assets/fonts/SF-Pro-Display-Regular.ttf": {
+	"/assets/fonts/sf-pro-display-regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "/assets/fonts/SF-Pro-Display-Regular.ttf",
+		"oAP": "/assets/fonts/sf-pro-display-regular.ttf",
 		"oF": 0
 		},
-	"/assets/fonts/SF-Pro-Display-Regular.woff": {
+	"/assets/fonts/sf-pro-display-regular.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "/assets/fonts/SF-Pro-Display-Regular.woff",
+		"oAP": "/assets/fonts/sf-pro-display-regular.woff",
 		"oF": 0
 		},
-	"/assets/fonts/SF-Pro-Display-Regular.woff2": {
+	"/assets/fonts/sf-pro-display-regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "/assets/fonts/SF-Pro-Display-Regular.woff2",
+		"oAP": "/assets/fonts/sf-pro-display-regular.woff2",
 		"oF": 0
 		},
 	"/assets/icons/symbol-defs.svg": {
