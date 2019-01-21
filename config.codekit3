@@ -62,6 +62,13 @@
 		"oAP": "/_includes/images/interchange-img-small-12-medium-12-cell.html",
 		"oF": 0
 		},
+	"/_includes/images/interchange-img-small-12-medium-4-cell.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/_includes/images/interchange-img-small-12-medium-4-cell.html",
+		"oF": 0
+		},
 	"/_includes/images/interchange-img-small-12-medium-6-cell.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -97,11 +104,11 @@
 		"oAP": "/_includes/pagination/collection.html",
 		"oF": 0
 		},
-	"/_includes/reveal/menu.html": {
+	"/_includes/reveal/navigation.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "/_includes/reveal/menu.html",
+		"oAP": "/_includes/reveal/navigation.html",
 		"oF": 0
 		},
 	"/_includes/site/analytics.html": {
@@ -130,6 +137,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "/_includes/site/header.html",
+		"oF": 0
+		},
+	"/_includes/site/loading.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/_includes/site/loading.html",
 		"oF": 0
 		},
 	"/_includes/site/scripts.html": {
@@ -193,6 +207,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "/_layouts/page.html",
+		"oF": 0
+		},
+	"/_layouts/subscribe.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/_layouts/subscribe.html",
 		"oF": 0
 		},
 	"/_layouts/work.html": {
@@ -461,6 +482,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/_uploads/the-maccabees-empty-vessels.jpg": {
+		"ft": 16384,
+		"iS": 152306,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/_uploads/the-maccabees-empty-vessels.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/_uploads/the-xx-chained.jpg": {
 		"ft": 16384,
 		"iS": 115987,
@@ -567,6 +599,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "/_work/collider.markdown",
+		"oF": 0
+		},
+	"/_work/empty-vessels.markdown": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/_work/empty-vessels.markdown",
 		"oF": 0
 		},
 	"/_work/england-lost.markdown": {
@@ -9348,6 +9387,24 @@
 		"oA": 2,
 		"oAP": "/robots.txt",
 		"oF": 0
+		},
+	"/subscribe.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "/subscribe.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"/terms.md": {
 		"cB": 0,
