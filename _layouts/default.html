@@ -9,36 +9,25 @@ layout: compress
 {% include site/head.html %}
 <!-- End Head -->
 
-<body class="{{page.layout | slugify}} grid-y" style="height: 100vh;">
-
-{% if page.layout == "home" %}
-<div class="grid-y align-center loader hide">
-  <div class="shrink cell">
-    {% include site/loading.html %}
-  </div>
-</div>
-{% endif %}
+<body class="{{page.layout | slugify}}">
 
 
 <!-- Header -->
-<div class="cell shrink" style="z-index: 1039" data-aos="fade-in" data-aos-delay="100">
 {% include site/header.html %}
-</div>
 <!-- End Header -->
 
 <!-- Main -->
-<div class="cell auto" id="main" data-aos="fade-in" data-aos-delay="100">
-  <main class="grid-x align-middle" style="min-height: 100%">
-    <div class="cell">
-    {{content}}
-    </div>
-  </main>
-</div>
+<main class="grid-x align-middle" style="min-height: 100%">
+  <div class="cell">
+  {{content}}
+  </div>
+</main>
 <!-- Main -->
 
 <!-- Navigation -->
 {% include reveal/navigation.html %}
 <!-- End Navigation -->
+
 
 </body>
 

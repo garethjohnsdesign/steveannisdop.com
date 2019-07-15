@@ -424,32 +424,7 @@ html.is-animating .swup-transition-color {
 .block__link {
 	position: relative;
 	cursor: pointer;
-	padding: 0.5rem 0;
-}
-
-.block__link span {
-	display: inline-block;
-	white-space: pre;
-}
-
-.block[data-fx="1"] a::after,
-a.content__text-link[data-fx="1"]::after {
-	content: '';
-	z-index: -1;
-	width: 100%;
-	bottom: 0.25rem;
-	left: 0;
-	position: absolute;
-	height: 2px;
-	background: currentColor;
-	transform: scale3d(0,1,1);
-	transform-origin: 0% 50%;
-	transition: transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
-}
-
-.block[data-fx="1"] a:hover::after,
-a.content__text-link[data-fx="1"]:hover::after {
-	transform: scale3d(1,1,1)
+  z-index: 0;
 }
 
 .hover-reveal {
@@ -460,6 +435,7 @@ a.content__text-link[data-fx="1"]:hover::after {
 	left: 0;
 	pointer-events: none;
 	opacity: 0;
+  z-index: -2;
 }
 
 .hover-reveal__inner,
@@ -473,11 +449,4 @@ a.content__text-link[data-fx="1"]:hover::after {
 .hover-reveal__img {
 	background-size: cover;
 	background-position: 50% 50%;
-}
-
-.block {
-position: relative;
-}
-.content {
-position: relative;
 }
