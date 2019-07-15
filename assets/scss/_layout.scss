@@ -268,6 +268,7 @@ $scrollhide-nav-transition-speed: 1s;
   }
 }
 
+/*
 header, nav {
   @include breakpoint(small) {
     @include padding(1, 1, 1, 1);
@@ -282,7 +283,9 @@ header, nav {
     @include padding(2, 4, null, 4);
   }
 }
+*/
 
+/*
 main {
   @include breakpoint(small) {
     @include padding(0, 1, 1, 1);
@@ -297,6 +300,7 @@ main {
     @include padding(0, 4, null, 4);
   }
 }
+*/
 
 footer {
   @include breakpoint(small) {
@@ -393,29 +397,12 @@ color: $black;
 }
 
 /* PAGE ANIMATIONS */
-.swup-transition-fade-up {
-  transition: 0.5s;
+.transition-fade {
+  transition: 0.4s;
   opacity: 1;
-  transform: translateY(0);
-}
-html.is-animating .swup-transition-fade-up {
-  opacity: 0;
-  transform: translateY(-10px);
 }
 
-.swup-transition-fade {
-  transition: 0.5s;
-  opacity: 1;
-}
-html.is-animating .swup-transition-fade {
-  opacity: 0;
-}
-
-.swup-transition-color {
-  transition: 0.5s;
-  opacity: 1;
-}
-html.is-animating .swup-transition-color {
+html.is-animating .transition-fade {
   opacity: 0;
 }
 

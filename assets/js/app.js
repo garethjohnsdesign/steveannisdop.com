@@ -2,6 +2,7 @@ import $ from "jquery";
 import Foundation from 'foundation-sites';
 import AOS from 'aos';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
+import Swup from 'swup';
 
 
 $(document).ready(function() {

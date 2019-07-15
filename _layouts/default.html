@@ -11,23 +11,25 @@ layout: compress
 
 <body class="{{page.layout | slugify}}">
 
+<main id="swup" class="transition-fade">
 
 <!-- Header -->
 {% include site/header.html %}
 <!-- End Header -->
 
 <!-- Main -->
-<main class="grid-y align-center" style="min-height: 80vh">
+<div class="grid-y align-center" style="min-height: 80vh">
   <div class="cell">
   {{content}}
   </div>
-</main>
+</div>
 <!-- Main -->
 
 <!-- Navigation -->
 {% include reveal/navigation.html %}
 <!-- End Navigation -->
 
+</main>
 
 </body>
 

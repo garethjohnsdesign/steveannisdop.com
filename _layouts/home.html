@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Home Selected Projects -->
-<div class="grid-x grid-padding-x small-up-1 medium-up-1 content">
+<div class="grid-x grid-padding-x small-up-1 medium-up-1">
   {% assign projects = paginator.posts | where: "is-featured", "true" %}
   {% for project in projects %}
   <div class="small-12 cell" data-fx="1">
