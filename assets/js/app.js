@@ -3,9 +3,18 @@ import Foundation from 'foundation-sites';
 import AOS from 'aos';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
 import Swup from 'swup';
-
+import SwupScriptsPlugin from '@swup/scripts-plugin';
 
 $(document).ready(function() {
+
+
+// Swup
+
+// enable swup
+const swup = new Swup({
+  plugins: [new SwupScriptsPlugin()]
+});
+
 
   // Foundation
   // ----------

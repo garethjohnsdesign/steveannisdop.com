@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@swup/plugin@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@swup/plugin/-/plugin-1.0.1.tgz#10606322508724a5beaed6a09326d8c30c7041fa"
+  integrity sha512-QrTGn1DLx+50CNsk6oGzUFnyNyLkDK6iLb032qKImmAXS+0Dd1cwa8cSGvJ+I27J4qR8y6oJNurgHIEc6ZCTrg==
+
+"@swup/scripts-plugin@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@swup/scripts-plugin/-/scripts-plugin-1.0.1.tgz#71c6060ce692df5f908141b22f57d6b030316245"
+  integrity sha512-gNnb4Q/rqMJQ4MI+N9QACqwCFLu28VlPC5KrE5jFQL4JB34zK9feWE4S1T9C5FE2Jp+n2uFwnxeInsPOE2tFgw==
+  dependencies:
+    "@swup/plugin" "^1.0.1"
+
 aos@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/aos/-/aos-2.3.4.tgz#eb1c29f5c1806a197cf6323080747547edd3db8e"
