@@ -2,46 +2,21 @@
 title: Steve Annis
 timezone: UTC
 collections:
-  notes:
-    title: Notes
-    output: false
-  posts:
-    title: Posts
-    output: true
   uploads:
     title: Uploads
     output: false
-  work:
-    title: Work
+  music-videos:
+    title: Music Videos
+    output: true
+  commercials:
+    title: Commercials
     output: true
 defaults:
-- scope:
-    path: ''
-    type: pages
-  values:
-    layout: page
-- scope:
-    path: ''
-    type: work
-  values:
-    excerpt: 
-    description: 
-    image: 
-    video: 
-    is-featured: 
-    images:
-    - image: 
-      caption: 
-    discipline: 
-    format:
-    - 
-    layout: page
 url: https://www.steveannisdop.com
-description: Award winning Director of Photography
+description: Award-winning Director of Photography
 permalink: pretty
 exclude:
 - bower.json
-- Gemfile.lock
 - package.json
 - config.codekit3
 - README*
