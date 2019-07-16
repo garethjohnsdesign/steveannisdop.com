@@ -5,7 +5,5 @@ header:
     url: /commercials/
   - title: Films
     url: /films/
-  - title: Press
-    url: /press/
-  - title: Contact
-    url: /contact/
+  - title: Information
+    url: /information/
