@@ -4,10 +4,10 @@ position: 0
 image: "/uploads/og-image.png"
 pagination:
   enabled: true
-  collection: commercials
-  sort_field: position
-  sort_reverse: false
-  per_page: 10
+  collection: films, commercials, music-videos
+  sort_field: date
+  sort_reverse: true
+  tag: home
 layout: home
 ---
 

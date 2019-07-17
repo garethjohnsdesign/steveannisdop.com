@@ -5,7 +5,7 @@ client: ASOS Puma
 position: 0
 video: https://vimeo.com/71561537
 image: "/uploads/os-pixadores.jpg"
-is-featured: true
+
 director: Ben Newman
 producer:
 production-company: Pulse Films

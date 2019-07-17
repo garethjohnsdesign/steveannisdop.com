@@ -5,7 +5,7 @@ position: 0
 client: Smart
 video: https://vimeo.com/49797339
 image: "/uploads/smart-car-skate-fortwo.jpg"
-is-featured: true
+
 director: Ben Newman
 producer: Oliver Roskill
 production-company: Pulse Films

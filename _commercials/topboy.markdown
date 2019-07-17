@@ -5,7 +5,7 @@ position: 0
 client: Channel 4
 video:
 image: "/uploads/top-boy.jpg"
-is-featured: true
+
 director: Keith Mcarthy
 producer:
 production-company: Channel 4

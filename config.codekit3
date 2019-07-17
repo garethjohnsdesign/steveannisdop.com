@@ -236,6 +236,14 @@
 		"oAP": "/_data/navigation.yml",
 		"oF": 0
 		},
+	"/_films/i-am-mother.markdown": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/_films/i-am-mother.markdown",
+		"oF": 0
+		},
 	"/_films/italy-texas.markdown": {
 		"cB": 0,
 		"ft": 8192,
@@ -300,14 +308,6 @@
 		"oAP": "/_films/titane-lune.markdown",
 		"oF": 0
 		},
-	"/_includes/blocks/excerpt.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/_includes/blocks/excerpt.html",
-		"oF": 0
-		},
 	"/_includes/images/interchange-img-small-12-medium-12-cell.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -362,6 +362,14 @@
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/_includes/pagination/collection.html",
+		"oF": 0
+		},
+	"/_includes/partials/excerpt.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/_includes/partials/excerpt.html",
 		"oF": 0
 		},
 	"/_includes/reveal/navigation.html": {

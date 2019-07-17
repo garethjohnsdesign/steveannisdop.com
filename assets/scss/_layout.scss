@@ -268,7 +268,6 @@ $scrollhide-nav-transition-speed: 1s;
   }
 }
 
-/*
 header, nav {
   @include breakpoint(small) {
     @include padding(1, 1, 1, 1);
@@ -283,9 +282,7 @@ header, nav {
     @include padding(2, 4, null, 4);
   }
 }
-*/
 
-/*
 main {
   @include breakpoint(small) {
     @include padding(0, 1, 1, 1);
@@ -300,7 +297,6 @@ main {
     @include padding(0, 4, null, 4);
   }
 }
-*/
 
 footer {
   @include breakpoint(small) {
@@ -364,7 +360,6 @@ width: 100%;
   @include aspect-ratio (2.4, 1);
   background-size: cover; 
   background-position: 50%;
-  background-color: $light-gray;
 }
 
 .excerpt img {
@@ -436,4 +431,12 @@ html.is-animating .transition-fade {
 .hover-reveal__img {
 	background-size: cover;
 	background-position: 50% 50%;
+}
+
+.home-link:after {
+content: 'Steve Annis';
+}
+
+.home-link:hover:after {
+  content: 'Director of Photography';
 }

@@ -5,7 +5,7 @@ position: 0
 client: Erste Bank
 video: https://vimeo.com/207111863
 image: "/uploads/erste-bank-ceska.jpg"
-is-featured: true
+
 director: Dan Difelice
 producer: Ondrej Mathe
 production-company: Boogie Films

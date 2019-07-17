@@ -5,7 +5,7 @@ client:
 position: 0
 video: https://vimeo.com/50670586
 image: "/uploads/luminaries.jpg"
-is-featured: true
+
 director: Tom Haines
 producer: Ilduara Lamas & Tom Haines
 production-company: Colonel Blimp

@@ -1,13 +1,13 @@
 ---
 title: Open Eye Signal
 date: 2013-04-30 13:22:00 Z
-categories:
-- Music Videos
+tags:
+- home
 position: 0
 client: Jon Hopkins
 video: https://vimeo.com/65156045
 image: "/uploads/jon-hopkins-open-eye-signal.jpg"
-is-featured: true
+
 director: Aoife McArdle
 producer: Brian Welsh
 production-company: Colonel Blimp

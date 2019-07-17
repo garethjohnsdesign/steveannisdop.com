@@ -5,7 +5,7 @@ position: 0
 client: Uniqlo
 video: https://vimeo.com/110693718
 image: "/uploads/uniqlo-heat-tech.jpg"
-is-featured: true
+
 director: Norman Bates
 producer: Malachy Mcanenny
 production-company: Stink

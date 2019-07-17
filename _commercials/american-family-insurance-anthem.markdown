@@ -5,7 +5,7 @@ position: 0
 client: American Family Insurance
 video: https://vimeo.com/71493442
 image: "/uploads/american-family-insurance-anthem.jpg"
-is-featured: true
+
 director: Josh and Xander
 producer:
 production-company: Radical Media

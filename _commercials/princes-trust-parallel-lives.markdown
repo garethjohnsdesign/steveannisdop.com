@@ -5,7 +5,7 @@ position: 0
 client: Princes Trust
 video: https://vimeo.com/170013343
 image: "/uploads/princes-trust-parallel-lives.jpg"
-is-featured: true
+
 director: Miles Jay
 production-company: Smuggler
 layout: page

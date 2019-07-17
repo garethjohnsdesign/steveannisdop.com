@@ -5,7 +5,7 @@ position: 0
 client: Three
 video: https://vimeo.com/127344150
 image: "/uploads/three-mobile-the-loneliest-whale.jpg"
-is-featured: true
+
 director: Tom Tagholm
 producer: Fran Thompson
 production-company: Park Pictures

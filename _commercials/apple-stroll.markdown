@@ -5,7 +5,7 @@ position: 0
 client: Apple
 video: https://vimeo.com/200088461
 image: "/uploads/apple-stroll.jpg"
-is-featured: true
+
 director: Sam Brown
 producer: Timory King
 production-company: Imperial Woodpecker

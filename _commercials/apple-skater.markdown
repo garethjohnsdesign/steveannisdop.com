@@ -7,7 +7,7 @@ position: 0
 client: Apple
 video: https://vimeo.com/246792067
 image: "/uploads/apple-skater.jpg"
-is-featured: true
+
 director: Sam Brown
 producer: Timory King
 production-company: Imperial Woodpecker

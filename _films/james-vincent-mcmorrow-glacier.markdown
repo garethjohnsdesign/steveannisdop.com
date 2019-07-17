@@ -5,7 +5,7 @@ position: 0
 client: James Vincent McMorrow
 video: https://vimeo.com/78293068
 image: "/uploads/james-vincent-mcmorrow-glacier.jpg"
-is-featured: true
+
 director: Aoife McArdle
 producer: Tamsin Glasson
 production-company: Colonel Blimp

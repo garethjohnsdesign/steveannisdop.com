@@ -5,7 +5,7 @@ position: 0
 client: GAA
 video: https://vimeo.com/102391864
 image: "/uploads/gaa-major-moments.jpg"
-is-featured: true
+
 director: Aoife McArdle
 producer: Andrew Freedman
 production-company: Antidote films, Dublin
