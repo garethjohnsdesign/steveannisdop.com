@@ -1,5 +1,9 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
+<symbol id="icon-add" viewBox="0 0 24 24">
+<title>add</title>
+<path d="M18.984 12.984h-6v6h-1.969v-6h-6v-1.969h6v-6h1.969v6h6v1.969z"></path>
+</symbol>
 <symbol id="icon-lens" viewBox="0 0 24 24">
 <title>lens</title>
 <path d="M12 2.016c5.531 0 9.984 4.453 9.984 9.984s-4.453 9.984-9.984 9.984-9.984-4.453-9.984-9.984 4.453-9.984 9.984-9.984z"></path>
@@ -7,6 +11,10 @@
 <symbol id="icon-radio_button_unchecked" viewBox="0 0 24 24">
 <title>radio_button_unchecked</title>
 <path d="M12 20.016c4.406 0 8.016-3.609 8.016-8.016s-3.609-8.016-8.016-8.016-8.016 3.609-8.016 8.016 3.609 8.016 8.016 8.016zM12 2.016c5.531 0 9.984 4.453 9.984 9.984s-4.453 9.984-9.984 9.984-9.984-4.453-9.984-9.984 4.453-9.984 9.984-9.984z"></path>
+</symbol>
+<symbol id="icon-play_arrow" viewBox="0 0 24 24">
+<title>play_arrow</title>
+<path d="M8.016 5.016l10.969 6.984-10.969 6.984v-13.969z"></path>
 </symbol>
 </defs>
 </svg>

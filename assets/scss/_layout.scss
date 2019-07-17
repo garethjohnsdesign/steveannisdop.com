@@ -316,19 +316,6 @@ footer {
   background-color: $light-gray;
 }
 
-.page__content {
-  h2:nth-child(n+2) {
-    margin-top: 2rem;
-  }
-  h3:nth-child(n+2) {
-    margin-top: 2rem;
-  }
-  img {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
-
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
@@ -344,8 +331,8 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-height: 100%;
-width: 100%;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -439,4 +426,16 @@ content: 'Steve Annis';
 
 .home-link:hover:after {
   content: 'Director of Photography';
+}
+
+.meta {
+background-color: transparent;
+top: 50% !important;
+left: 50% !important;
+transform: translate(-50%, -50%);
+position: absolute;
+}
+
+.project__client {
+  padding-right: 0.5rem;
 }

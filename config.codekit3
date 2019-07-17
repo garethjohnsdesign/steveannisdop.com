@@ -356,6 +356,14 @@
 		"oAP": "/_includes/partials/excerpt.html",
 		"oF": 0
 		},
+	"/_includes/reveal/meta.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/_includes/reveal/meta.html",
+		"oF": 0
+		},
 	"/_includes/reveal/navigation.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -1557,6 +1565,30 @@
 		"oAP": "/assets/fonts/gallery.woff2",
 		"oF": 0
 		},
+	"/assets/fonts/sf-pro-display-regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/assets/fonts/sf-pro-display-regular.ttf",
+		"oF": 0
+		},
+	"/assets/fonts/sf-pro-display-regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/assets/fonts/sf-pro-display-regular.woff",
+		"oF": 0
+		},
+	"/assets/fonts/sf-pro-display-regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/assets/fonts/sf-pro-display-regular.woff2",
+		"oF": 0
+		},
 	"/assets/icons/symbol-defs.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1751,16 +1783,6 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"/assets/scss/_flickity.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/scss/_flickity-ck.css",
-		"oF": 0,
-		"oS": 0
 		},
 	"/assets/scss/_fonts.scss": {
 		"aP": 0,

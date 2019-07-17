@@ -7,8 +7,8 @@ position: 0
 video: https://vimeo.com/335345961
 image: "/uploads/i-am-mother.jpg"
 director: Grant Sputore
-producer: Andrew Freedman
-production-company: Irish Film Board / Venom Films
+producer: Timothy White, Kelvin Munro
+production-company: Penguin Empire, Southern Light Films
 layout: page
 ---
 

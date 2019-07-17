@@ -26,43 +26,13 @@ layout: default
 <!-- End Page Image -->
 
 <!-- Meta -->
-<div class="grid-container">
- <div class="grid-x grid-padding-x grid-padding-y align-center">
+<div class="grid-x grid-padding-x grid-padding-y align-center">
   <div class="small-12 medium-10 cell text-center">
-    
-<!--   	<div class="secondary-color margin-bottom-1">{% if page.client %}{{ page.client }} — {% endif %} {{ page.title }}</div> -->
-
-    {% if page.director %}
-  	<div>Director</div>
-    <div class="secondary-color margin-bottom-1">
-    {{ page.director }}
-    </div>
-    {% endif %}
-
-    {% if page.producer %}
-  	<div>Producer</div>
-    <div class="secondary-color margin-bottom-1">
-    {{ page.producer }}
-    </div>
-    {% endif %}
-
-    {% if page.production-company %}
-  	<div>Production Company</div>
-    <div class="secondary-color margin-bottom-1">
-    {{ page.production-company }}
-    </div>
-    {% endif %}
-
-    {% if page.awards %}
-  	<div>Awards</div>
-    <div class="secondary-color margin-bottom-1">
-    {% for award in page.awards %}
-    <div>{{ award }}</div>
-    {% endfor %}
-    </div>
-    {% endif %}
-  	
+    <a data-toggle="meta"><svg class="icon icon-add"><use xlink:href="/assets/icons/symbol-defs.svg#icon-add"></use></svg></a>
   </div>
- </div>
 </div>
+<!-- End Meta -->
+
+<!-- Meta -->
+{% include reveal/meta.html %}
 <!-- End Meta -->
