@@ -1740,6 +1740,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/assets/js/lg-video.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/min/lg-video-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/assets/js/min/app-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -1758,17 +1769,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/assets/js/min/min/svgxuse-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"/assets/js/min/TweenMax.min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/js/min/min/TweenMax.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0

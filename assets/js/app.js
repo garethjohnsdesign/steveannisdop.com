@@ -27,7 +27,6 @@ Foundation.Interchange.SPECIAL_QUERIES['xxlarge-retina'] = 'only screen and (min
   
 $(document).foundation();
 
-
 $('.video').lightGallery({
     counter: false,
     videoMaxWidth: '1080px',
@@ -45,6 +44,7 @@ $('.video').lightGallery({
         color : 'FFFFFF'     
     }
 });
+
 // 1. Loading
 // --------------------
 
