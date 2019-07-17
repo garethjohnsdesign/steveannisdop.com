@@ -4,9 +4,10 @@ import AOS from 'aos';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
+import 'lightGallery';
+
 
 $(document).ready(function() {
-
 
 // Swup
 
@@ -26,11 +27,28 @@ Foundation.Interchange.SPECIAL_QUERIES['xxlarge-retina'] = 'only screen and (min
   
 $(document).foundation();
 
+
+$('.video').lightGallery({
+    counter: false,
+    videoMaxWidth: '1080px',
+    youtubePlayerParams: {
+        modestbranding: 1,
+        showinfo: 0,
+        rel: 0,
+        autoplay: 0,
+    },
+    vimeoPlayerParams: {
+        autoplay: 0,
+        title : 0,
+        byline : 0,
+        portrait : 0,
+        color : 'FFFFFF'     
+    }
+});
 // 1. Loading
 // --------------------
 
 $(function() {
-
 
     $(".loader").removeClass("hide");
 
@@ -57,15 +75,8 @@ $(function() {
 window.addEventListener('load', AOS.refresh);
 });
 
-
-
-$('[data-curtain-menu-button]').click(function(){
-  $('body').toggleClass('curtain-menu-open');
-});
-
 // 2. Hover Effect
 // ---------------
-
 
 {
     const mapNumber = (X,A,B,C,D) => (X-A)*(D-C)/(B-A)+C;
