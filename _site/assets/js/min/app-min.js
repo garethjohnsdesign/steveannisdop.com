@@ -36038,6 +36038,21 @@
 	  
 	jquery(document).foundation();
 
+	// 1. Loading
+	// --------------------
+
+	jquery(function() {
+
+
+	    jquery(".loader").removeClass("hide");
+
+	    jquery(".loader").addClass("loading");
+
+	    setTimeout(function(){
+	     jquery(".loader").addClass("loaded");
+	    }, 5000); 
+
+	});
 
 	// 2. Animate on Scroll
 	// --------------------

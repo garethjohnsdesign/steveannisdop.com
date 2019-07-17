@@ -325,7 +325,9 @@ footer {
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
-  > .content {
+ .content {
+    transition: $primary-transition;
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -340,22 +342,6 @@ footer {
   @include aspect-ratio (2.4, 1);
   background-size: cover; 
   background-position: 50%;
-  background-color: $light-gray;
-}
-
-.excerpt {
-  @include aspect-ratio (2.4, 1);
-  background-size: cover; 
-  background-position: 50%;
-}
-
-.excerpt img {
-    opacity: 1.0;
-    transition: opacity .35s cubic-bezier(.39, .575, .565, 1);
-}
-
-.excerpt img:hover {
-    opacity: 0.9;
 }
 
 .orbit-previous, .orbit-next {
@@ -438,4 +424,40 @@ position: absolute;
 
 .project__client {
   padding-right: 0.5rem;
+}
+
+.excerpt a  {
+  transition: $primary-transition;
+  .content {
+  background-color: rgba($black, 0);
+  }
+}
+
+.excerpt a:hover  {
+  .content {
+  background-color: rgba($black, 0.25);
+  }
+}
+
+// 5. Loading
+// ------
+
+.loader {
+  z-index: 1040;
+  position: fixed;
+  background: $black;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; 
+  opacity: 0;
+  transition: $primary-transition;
+  visibility: visible; 
+  &.loading {
+    opacity: 1;
+  }
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

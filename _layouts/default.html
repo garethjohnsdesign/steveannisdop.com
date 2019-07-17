@@ -11,6 +11,14 @@ layout: compress
 
 <body class="{{page.layout | slugify}}">
 
+{% if page.layout == "home" %}
+<div class="grid-y align-center loader hide">
+  <div class="shrink cell">
+    {% include site/loading.html %}
+  </div>
+</div>
+{% endif %}
+
 <div id="swup" class="transition-fade">
 
 <!-- Header -->
