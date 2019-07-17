@@ -332,28 +332,12 @@
 		"oAP": "/_includes/images/interchange-img-small-12-medium-6-cell.html",
 		"oF": 0
 		},
-	"/_includes/off-canvas/legal.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/_includes/off-canvas/legal.html",
-		"oF": 0
-		},
 	"/_includes/off-canvas/menu.html": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/_includes/off-canvas/menu.html",
-		"oF": 0
-		},
-	"/_includes/off-canvas/subscribe.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/_includes/off-canvas/subscribe.html",
 		"oF": 0
 		},
 	"/_includes/pagination/collection.html": {
@@ -963,6 +947,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/_uploads/i-am-mother.jpg": {
+		"ft": 16384,
+		"iS": 302194,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/_uploads/i-am-mother.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/_uploads/img-anthem.jpg": {
 		"ft": 16384,
 		"iS": 150118,
@@ -1560,78 +1555,6 @@
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/assets/fonts/gallery.woff2",
-		"oF": 0
-		},
-	"/assets/fonts/larsseit.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/larsseit.ttf",
-		"oF": 0
-		},
-	"/assets/fonts/larsseit.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/larsseit.woff",
-		"oF": 0
-		},
-	"/assets/fonts/larsseit.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/larsseit.woff2",
-		"oF": 0
-		},
-	"/assets/fonts/messina-sans-regular.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/messina-sans-regular.ttf",
-		"oF": 0
-		},
-	"/assets/fonts/messina-sans-regular.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/messina-sans-regular.woff",
-		"oF": 0
-		},
-	"/assets/fonts/messina-sans-regular.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/messina-sans-regular.woff2",
-		"oF": 0
-		},
-	"/assets/fonts/sf-pro-display-regular.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/sf-pro-display-regular.ttf",
-		"oF": 0
-		},
-	"/assets/fonts/sf-pro-display-regular.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/sf-pro-display-regular.woff",
-		"oF": 0
-		},
-	"/assets/fonts/sf-pro-display-regular.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/assets/fonts/sf-pro-display-regular.woff2",
 		"oF": 0
 		},
 	"/assets/icons/symbol-defs.svg": {

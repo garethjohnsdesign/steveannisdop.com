@@ -11,7 +11,7 @@ layout: default
 
     <div class="small-12 medium-6 cell" data-aos="fade-in">
      {% for detail in page.details %}
-        <h4 class="medium-gray">{{detail.title}}</h4>
+        <h5>{{detail.title}}</h5>
         {{detail.text | markdownify}}
       {% endfor %}
     </div>

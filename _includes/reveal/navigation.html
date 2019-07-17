@@ -1,6 +1,6 @@
 <nav class="full reveal" id="navigation" data-reveal data-animation-in="fade-in fast" data-animation-out="fade-out fast">
-  <div class="grid-x grid-padding-x grid-padding-y align-center-middle" style="height: 100%">
-    <div class="shrink cell text-center">
+  <div class="grid-x grid-padding-x grid-padding-y" style="height: 100%">
+    <div class="shrink cell">
 
     {% for entry in site.data.navigation.header %}{% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}{% if fullurl == page.url %}{% assign current_page = fullurl %}{% break %}{% elsif page.url contains fullurl %}{% assign current_page = fullurl %}{% endif %}{% endfor %}
 
