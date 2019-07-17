@@ -38,7 +38,7 @@ $(function() {
 
     setTimeout(function(){
      $(".loader").addClass("loaded");
-    }, 5000); 
+    }, 2500); 
 
 });
 

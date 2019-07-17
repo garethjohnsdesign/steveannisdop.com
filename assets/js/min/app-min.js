@@ -36050,7 +36050,7 @@
 
 	    setTimeout(function(){
 	     jquery(".loader").addClass("loaded");
-	    }, 5000); 
+	    }, 2500); 
 
 	});
 

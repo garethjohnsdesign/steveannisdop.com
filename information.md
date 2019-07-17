@@ -4,12 +4,14 @@ position: 3
 details:
 - title: Instagram
   text: "[@steveannisdop](https://www.instagram.com/steveannisdop/)"
+- title: Vimeo
+  text: "[@steveannisdop](https://vimeo.com/steveannisdop)"
 - title: General Enquiries
   text: "[studio@steveannisdop.com](mailto:studio@steveannisdop.com)"
 - title: UK Enquiries
-  text: "This line is also a separate paragraph, but  This line is only separated by a single newline, so it's a separate line in the"
-- title: Press + Media
-  text: "[press@steveannisdop.com](mailto:press@steveannisdop.com)"
+  text: "[Lux](mailto:rebecca@luxartists.net)"
+- title: US Enquiries
+  text: "[William Morris Endeavor](mailto:SShankewitz@wmeentertainment.com)"
 layout: information
 ---
 
