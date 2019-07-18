@@ -2,10 +2,19 @@ import $ from "jquery";
 import Foundation from 'foundation-sites';
 import AOS from 'aos';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
-import "lightGallery";
-import "lg-fullscreen";
-import "lg-video";
+import Swup from 'swup';
+import SwupScriptsPlugin from '@swup/scripts-plugin';
+import "lightgallery/dist/js/lightgallery-all.min.js";
 
+
+$(document).ready(function() {
+
+// Swup
+
+// enable swup
+const swup = new Swup({
+  plugins: [new SwupScriptsPlugin()]
+});
 
 
   // Foundation
@@ -25,7 +34,7 @@ $('.video').lightGallery({
         modestbranding: 1,
         showinfo: 0,
         rel: 0,
-        autoplay: 0
+        autoplay: 0,
     },
     vimeoPlayerParams: {
         autoplay: 1,
@@ -65,7 +74,6 @@ $(function() {
 $(function() {
 window.addEventListener('load', AOS.refresh);
 });
-
 
 // 2. Hover Effect
 // ---------------
@@ -185,3 +193,5 @@ window.addEventListener('load', AOS.refresh);
     [...document.querySelectorAll('[data-fx="1"] > a, a[data-fx="1"]')].forEach(link => new HoverImgFx1(link));
 
 }
+
+});

@@ -34617,1406 +34617,6 @@
 	 * @author: Jack Doyle, jack@greensock.com
 	 **/
 
-	var DOCUMENT_NODE_TYPE = 9;
-
-	/**
-	 * A polyfill for Element.matches()
-	 */
-	if (typeof Element !== 'undefined' && !Element.prototype.matches) {
-	    var proto = Element.prototype;
-
-	    proto.matches = proto.matchesSelector ||
-	                    proto.mozMatchesSelector ||
-	                    proto.msMatchesSelector ||
-	                    proto.oMatchesSelector ||
-	                    proto.webkitMatchesSelector;
-	}
-
-	/**
-	 * Finds the closest parent that matches a selector.
-	 *
-	 * @param {Element} element
-	 * @param {String} selector
-	 * @return {Function}
-	 */
-	function closest (element, selector) {
-	    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
-	        if (typeof element.matches === 'function' &&
-	            element.matches(selector)) {
-	          return element;
-	        }
-	        element = element.parentNode;
-	    }
-	}
-
-	var closest_1 = closest;
-
-	/**
-	 * Delegates event to a selector.
-	 *
-	 * @param {Element} element
-	 * @param {String} selector
-	 * @param {String} type
-	 * @param {Function} callback
-	 * @param {Boolean} useCapture
-	 * @return {Object}
-	 */
-	function delegate(element, selector, type, callback, useCapture) {
-	    var listenerFn = listener.apply(this, arguments);
-
-	    element.addEventListener(type, listenerFn, useCapture);
-
-	    return {
-	        destroy: function() {
-	            element.removeEventListener(type, listenerFn, useCapture);
-	        }
-	    }
-	}
-
-	/**
-	 * Finds closest match and invokes callback.
-	 *
-	 * @param {Element} element
-	 * @param {String} selector
-	 * @param {String} type
-	 * @param {Function} callback
-	 * @return {Function}
-	 */
-	function listener(element, selector, type, callback) {
-	    return function(e) {
-	        e.delegateTarget = closest_1(e.target, selector);
-
-	        if (e.delegateTarget) {
-	            callback.call(element, e);
-	        }
-	    }
-	}
-
-	var delegate_1 = delegate;
-
-	var Cache_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Cache = exports.Cache = function () {
-		function Cache() {
-			_classCallCheck(this, Cache);
-
-			this.pages = {};
-			this.last = null;
-		}
-
-		_createClass(Cache, [{
-			key: 'cacheUrl',
-			value: function cacheUrl(page) {
-				if (page.url in this.pages === false) {
-					this.pages[page.url] = page;
-				}
-				this.last = this.pages[page.url];
-				this.swup.log('Cache (' + Object.keys(this.pages).length + ')', this.pages);
-			}
-		}, {
-			key: 'getPage',
-			value: function getPage(url) {
-				return this.pages[url];
-			}
-		}, {
-			key: 'getCurrentPage',
-			value: function getCurrentPage() {
-				return this.getPage(window.location.pathname + window.location.search);
-			}
-		}, {
-			key: 'exists',
-			value: function exists(url) {
-				return url in this.pages;
-			}
-		}, {
-			key: 'empty',
-			value: function empty() {
-				this.pages = {};
-				this.last = null;
-				this.swup.log('Cache cleared');
-			}
-		}, {
-			key: 'remove',
-			value: function remove(url) {
-				delete this.pages[url];
-			}
-		}]);
-
-		return Cache;
-	}();
-
-	exports.default = Cache;
-	});
-
-	unwrapExports(Cache_1);
-	var Cache_2 = Cache_1.Cache;
-
-	var classify_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var classify = function classify(text) {
-		var output = text.toString().toLowerCase().replace(/\s+/g, '-') // Replace spaces with -
-		.replace(/\//g, '-') // Replace / with -
-		.replace(/[^\w\-]+/g, '') // Remove all non-word chars
-		.replace(/\-\-+/g, '-') // Replace multiple - with single -
-		.replace(/^-+/, '') // Trim - from start of text
-		.replace(/-+$/, ''); // Trim - from end of text
-		if (output[0] === '/') output = output.splice(1);
-		if (output === '') output = 'homepage';
-		return output;
-	};
-
-	exports.default = classify;
-	});
-
-	unwrapExports(classify_1);
-
-	var createHistoryRecord_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var createHistoryRecord = function createHistoryRecord(url) {
-		window.history.pushState({
-			url: url || window.location.href.split(window.location.hostname)[1],
-			random: Math.random(),
-			source: 'swup'
-		}, document.getElementsByTagName('title')[0].innerText, url || window.location.href.split(window.location.hostname)[1]);
-	};
-
-	exports.default = createHistoryRecord;
-	});
-
-	unwrapExports(createHistoryRecord_1);
-
-	var utils = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var query = exports.query = function query(selector) {
-		var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-
-		if (typeof selector !== 'string') {
-			return selector;
-		}
-
-		return context.querySelector(selector);
-	};
-
-	var queryAll = exports.queryAll = function queryAll(selector) {
-		var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-
-		if (typeof selector !== 'string') {
-			return selector;
-		}
-
-		return Array.prototype.slice.call(context.querySelectorAll(selector));
-	};
-	});
-
-	unwrapExports(utils);
-	var utils_1 = utils.query;
-	var utils_2 = utils.queryAll;
-
-	var getDataFromHtml_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-
-
-	var getDataFromHtml = function getDataFromHtml(html, containers) {
-		var content = html.replace('<body', '<div id="swupBody"').replace('</body>', '</div>');
-		var fakeDom = document.createElement('div');
-		fakeDom.innerHTML = content;
-		var blocks = [];
-
-		var _loop = function _loop(i) {
-			if (fakeDom.querySelector(containers[i]) == null) {
-				// page in invalid
-				return {
-					v: null
-				};
-			} else {
-				(0, utils.queryAll)(containers[i]).forEach(function (item, index) {
-					(0, utils.queryAll)(containers[i], fakeDom)[index].setAttribute('data-swup', blocks.length); // marks element with data-swup
-					blocks.push((0, utils.queryAll)(containers[i], fakeDom)[index].outerHTML);
-				});
-			}
-		};
-
-		for (var i = 0; i < containers.length; i++) {
-			var _ret = _loop(i);
-
-			if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
-		}
-
-		var json = {
-			title: fakeDom.querySelector('title').innerText,
-			pageClass: fakeDom.querySelector('#swupBody').className,
-			originalContent: html,
-			blocks: blocks
-		};
-
-		// to prevent memory leaks
-		fakeDom.innerHTML = '';
-		fakeDom = null;
-
-		return json;
-	};
-
-	exports.default = getDataFromHtml;
-	});
-
-	unwrapExports(getDataFromHtml_1);
-
-	var fetch_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var fetch = function fetch(setOptions) {
-		var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-		var defaults = {
-			url: window.location.pathname + window.location.search,
-			method: 'GET',
-			data: null,
-			headers: {}
-		};
-
-		var options = _extends({}, defaults, setOptions);
-
-		var request = new XMLHttpRequest();
-
-		request.onreadystatechange = function () {
-			if (request.readyState === 4) {
-				if (request.status !== 500) {
-					callback(request);
-				} else {
-					callback(request);
-				}
-			}
-		};
-
-		request.open(options.method, options.url, true);
-		Object.keys(options.headers).forEach(function (key) {
-			request.setRequestHeader(key, options.headers[key]);
-		});
-		request.send(options.data);
-		return request;
-	};
-
-	exports.default = fetch;
-	});
-
-	unwrapExports(fetch_1);
-
-	var transitionEnd_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var transitionEnd = function transitionEnd() {
-		var el = document.createElement('div');
-
-		var transEndEventNames = {
-			WebkitTransition: 'webkitTransitionEnd',
-			MozTransition: 'transitionend',
-			OTransition: 'oTransitionEnd otransitionend',
-			transition: 'transitionend'
-		};
-
-		for (var name in transEndEventNames) {
-			if (el.style[name] !== undefined) {
-				return transEndEventNames[name];
-			}
-		}
-
-		return false;
-	};
-
-	exports.default = transitionEnd;
-	});
-
-	unwrapExports(transitionEnd_1);
-
-	var getCurrentUrl_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var getCurrentUrl = function getCurrentUrl() {
-		return window.location.pathname + window.location.search;
-	};
-
-	exports.default = getCurrentUrl;
-	});
-
-	unwrapExports(getCurrentUrl_1);
-
-	var markSwupElements_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-
-
-	var markSwupElements = function markSwupElements(element, containers) {
-		var blocks = 0;
-
-		var _loop = function _loop(i) {
-			if (element.querySelector(containers[i]) == null) {
-				console.warn('Element ' + containers[i] + ' is not in current page.');
-			} else {
-				(0, utils.queryAll)(containers[i]).forEach(function (item, index) {
-					(0, utils.queryAll)(containers[i], element)[index].setAttribute('data-swup', blocks);
-					blocks++;
-				});
-			}
-		};
-
-		for (var i = 0; i < containers.length; i++) {
-			_loop(i);
-		}
-	};
-
-	exports.default = markSwupElements;
-	});
-
-	unwrapExports(markSwupElements_1);
-
-	var Link_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Link = function () {
-		function Link(elementOrUrl) {
-			_classCallCheck(this, Link);
-
-			if (elementOrUrl instanceof Element || elementOrUrl instanceof SVGElement) {
-				this.link = elementOrUrl;
-			} else {
-				this.link = document.createElement('a');
-				this.link.href = elementOrUrl;
-			}
-		}
-
-		_createClass(Link, [{
-			key: 'getPath',
-			value: function getPath() {
-				var path = this.link.pathname;
-				if (path[0] !== '/') {
-					path = '/' + path;
-				}
-				return path;
-			}
-		}, {
-			key: 'getAddress',
-			value: function getAddress() {
-				var path = this.link.pathname + this.link.search;
-
-				if (this.link.getAttribute('xlink:href')) {
-					path = this.link.getAttribute('xlink:href');
-				}
-
-				if (path[0] !== '/') {
-					path = '/' + path;
-				}
-				return path;
-			}
-		}, {
-			key: 'getHash',
-			value: function getHash() {
-				return this.link.hash;
-			}
-		}]);
-
-		return Link;
-	}();
-
-	exports.default = Link;
-	});
-
-	unwrapExports(Link_1);
-
-	var helpers = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.Link = exports.markSwupElements = exports.getCurrentUrl = exports.transitionEnd = exports.fetch = exports.getDataFromHtml = exports.createHistoryRecord = exports.classify = undefined;
-
-
-
-	var _classify2 = _interopRequireDefault(classify_1);
-
-
-
-	var _createHistoryRecord2 = _interopRequireDefault(createHistoryRecord_1);
-
-
-
-	var _getDataFromHtml2 = _interopRequireDefault(getDataFromHtml_1);
-
-
-
-	var _fetch2 = _interopRequireDefault(fetch_1);
-
-
-
-	var _transitionEnd2 = _interopRequireDefault(transitionEnd_1);
-
-
-
-	var _getCurrentUrl2 = _interopRequireDefault(getCurrentUrl_1);
-
-
-
-	var _markSwupElements2 = _interopRequireDefault(markSwupElements_1);
-
-
-
-	var _Link2 = _interopRequireDefault(Link_1);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var classify = exports.classify = _classify2.default;
-	var createHistoryRecord = exports.createHistoryRecord = _createHistoryRecord2.default;
-	var getDataFromHtml = exports.getDataFromHtml = _getDataFromHtml2.default;
-	var fetch = exports.fetch = _fetch2.default;
-	var transitionEnd = exports.transitionEnd = _transitionEnd2.default;
-	var getCurrentUrl = exports.getCurrentUrl = _getCurrentUrl2.default;
-	var markSwupElements = exports.markSwupElements = _markSwupElements2.default;
-	var Link = exports.Link = _Link2.default;
-	});
-
-	unwrapExports(helpers);
-	var helpers_1 = helpers.Link;
-	var helpers_2 = helpers.markSwupElements;
-	var helpers_3 = helpers.getCurrentUrl;
-	var helpers_4 = helpers.transitionEnd;
-	var helpers_5 = helpers.fetch;
-	var helpers_6 = helpers.getDataFromHtml;
-	var helpers_7 = helpers.createHistoryRecord;
-	var helpers_8 = helpers.classify;
-
-	var loadPage_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-
-
-	var loadPage = function loadPage(data, popstate) {
-		var _this = this;
-
-		// create array for storing animation promises
-		var animationPromises = [],
-		    xhrPromise = void 0;
-		var animateOut = function animateOut() {
-			_this.triggerEvent('animationOutStart');
-
-			// handle classes
-			document.documentElement.classList.add('is-changing');
-			document.documentElement.classList.add('is-leaving');
-			document.documentElement.classList.add('is-animating');
-			if (popstate) {
-				document.documentElement.classList.add('is-popstate');
-			}
-			document.documentElement.classList.add('to-' + (0, helpers.classify)(data.url));
-
-			// animation promise stuff
-			animationPromises = _this.getAnimationPromises('out');
-			Promise.all(animationPromises).then(function () {
-				_this.triggerEvent('animationOutDone');
-			});
-
-			// create history record if this is not a popstate call
-			if (!popstate) {
-				// create pop element with or without anchor
-				var state = void 0;
-				if (_this.scrollToElement != null) {
-					state = data.url + _this.scrollToElement;
-				} else {
-					state = data.url;
-				}
-
-				(0, helpers.createHistoryRecord)(state);
-			}
-		};
-
-		this.triggerEvent('transitionStart', popstate);
-
-		// set transition object
-		if (data.customTransition != null) {
-			this.updateTransition(window.location.pathname, data.url, data.customTransition);
-			document.documentElement.classList.add('to-' + (0, helpers.classify)(data.customTransition));
-		} else {
-			this.updateTransition(window.location.pathname, data.url);
-		}
-
-		// start/skip animation
-		if (!popstate || this.options.animateHistoryBrowsing) {
-			animateOut();
-		} else {
-			this.triggerEvent('animationSkipped');
-		}
-
-		// start/skip loading of page
-		if (this.cache.exists(data.url)) {
-			xhrPromise = new Promise(function (resolve) {
-				resolve();
-			});
-			this.triggerEvent('pageRetrievedFromCache');
-		} else {
-			if (!this.preloadPromise || this.preloadPromise.route != data.url) {
-				xhrPromise = new Promise(function (resolve, reject) {
-					(0, helpers.fetch)(_extends({}, data, { headers: _this.options.requestHeaders }), function (response) {
-						if (response.status === 500) {
-							_this.triggerEvent('serverError');
-							reject(data.url);
-							return;
-						} else {
-							// get json data
-							var page = _this.getPageData(response);
-							if (page != null) {
-								page.url = data.url;
-							} else {
-								reject(data.url);
-								return;
-							}
-							// render page
-							_this.cache.cacheUrl(page);
-							_this.triggerEvent('pageLoaded');
-						}
-						resolve();
-					});
-				});
-			} else {
-				xhrPromise = this.preloadPromise;
-			}
-		}
-
-		// when everything is ready, handle the outcome
-		Promise.all(animationPromises.concat([xhrPromise])).then(function () {
-			// render page
-			_this.renderPage(_this.cache.getPage(data.url), popstate);
-			_this.preloadPromise = null;
-		}).catch(function (errorUrl) {
-			// rewrite the skipPopStateHandling function to redirect manually when the history.go is processed
-			_this.options.skipPopStateHandling = function () {
-				window.location = errorUrl;
-				return true;
-			};
-
-			// go back to the actual page were still at
-			window.history.go(-1);
-		});
-	};
-
-	exports.default = loadPage;
-	});
-
-	unwrapExports(loadPage_1);
-
-	var renderPage_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-
-
-
-
-	var renderPage = function renderPage(page, popstate) {
-		var _this = this;
-
-		document.documentElement.classList.remove('is-leaving');
-
-		// replace state in case the url was redirected
-		var link = new helpers.Link(page.responseURL);
-		if (window.location.pathname !== link.getPath()) {
-			window.history.replaceState({
-				url: link.getPath(),
-				random: Math.random(),
-				source: 'swup'
-			}, document.title, link.getPath());
-
-			// save new record for redirected url
-			this.cache.cacheUrl(_extends({}, page, { url: link.getPath() }));
-		}
-
-		// only add for non-popstate transitions
-		if (!popstate || this.options.animateHistoryBrowsing) {
-			document.documentElement.classList.add('is-rendering');
-		}
-
-		this.triggerEvent('willReplaceContent', popstate);
-
-		// replace blocks
-		for (var i = 0; i < page.blocks.length; i++) {
-			document.body.querySelector('[data-swup="' + i + '"]').outerHTML = page.blocks[i];
-		}
-
-		// set title
-		document.title = page.title;
-
-		this.triggerEvent('contentReplaced', popstate);
-		this.triggerEvent('pageView', popstate);
-
-		// empty cache if it's disabled (because pages could be preloaded and stuff)
-		if (!this.options.cache) {
-			this.cache.empty();
-		}
-
-		// start animation IN
-		setTimeout(function () {
-			if (!popstate || _this.options.animateHistoryBrowsing) {
-				_this.triggerEvent('animationInStart');
-				document.documentElement.classList.remove('is-animating');
-			}
-		}, 10);
-
-		// handle end of animation
-		var animationPromises = this.getAnimationPromises('in');
-		if (!popstate || this.options.animateHistoryBrowsing) {
-			Promise.all(animationPromises).then(function () {
-				_this.triggerEvent('animationInDone');
-				_this.triggerEvent('transitionEnd', popstate);
-				// remove "to-{page}" classes
-				document.documentElement.className.split(' ').forEach(function (classItem) {
-					if (new RegExp('^to-').test(classItem) || classItem === 'is-changing' || classItem === 'is-rendering' || classItem === 'is-popstate') {
-						document.documentElement.classList.remove(classItem);
-					}
-				});
-			});
-		} else {
-			this.triggerEvent('transitionEnd', popstate);
-		}
-
-		// reset scroll-to element
-		this.scrollToElement = null;
-	};
-
-	exports.default = renderPage;
-	});
-
-	unwrapExports(renderPage_1);
-
-	var triggerEvent_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var triggerEvent = function triggerEvent(eventName, originalEvent) {
-		// call saved handlers with "on" method and pass originalEvent object if available
-		this._handlers[eventName].forEach(function (handler) {
-			try {
-				handler(originalEvent);
-			} catch (error) {
-				console.error(error);
-			}
-		});
-
-		// trigger event on document with prefix "swup:"
-		var event = new CustomEvent('swup:' + eventName, { detail: eventName });
-		document.dispatchEvent(event);
-	};
-
-	exports.default = triggerEvent;
-	});
-
-	unwrapExports(triggerEvent_1);
-
-	var on_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var on = function on(event, handler) {
-		if (this._handlers[event]) {
-			this._handlers[event].push(handler);
-		} else {
-			console.warn("Unsupported event " + event + ".");
-		}
-	};
-
-	exports.default = on;
-	});
-
-	unwrapExports(on_1);
-
-	var off_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var off = function off(event, handler) {
-		var _this = this;
-
-		if (event != null) {
-			if (handler != null) {
-				if (this._handlers[event] && this._handlers[event].filter(function (savedHandler) {
-					return savedHandler === handler;
-				}).length) {
-					var toRemove = this._handlers[event].filter(function (savedHandler) {
-						return savedHandler === handler;
-					})[0];
-					var index = this._handlers[event].indexOf(toRemove);
-					if (index > -1) {
-						this._handlers[event].splice(index, 1);
-					}
-				} else {
-					console.warn("Handler for event '" + event + "' no found.");
-				}
-			} else {
-				this._handlers[event] = [];
-			}
-		} else {
-			Object.keys(this._handlers).forEach(function (keys) {
-				_this._handlers[keys] = [];
-			});
-		}
-	};
-
-	exports.default = off;
-	});
-
-	unwrapExports(off_1);
-
-	var updateTransition_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var updateTransition = function updateTransition(from, to, custom) {
-		// transition routes
-		this.transition = {
-			from: from,
-			to: to,
-			custom: custom
-		};
-	};
-
-	exports.default = updateTransition;
-	});
-
-	unwrapExports(updateTransition_1);
-
-	var getAnimationPromises_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-
-
-
-
-	var getAnimationPromises = function getAnimationPromises() {
-		var promises = [];
-		var animatedElements = (0, utils.queryAll)(this.options.animationSelector);
-		animatedElements.forEach(function (element) {
-			var promise = new Promise(function (resolve) {
-				element.addEventListener((0, helpers.transitionEnd)(), function (event) {
-					if (element == event.target) {
-						resolve();
-					}
-				});
-			});
-			promises.push(promise);
-		});
-		return promises;
-	};
-
-	exports.default = getAnimationPromises;
-	});
-
-	unwrapExports(getAnimationPromises_1);
-
-	var getPageData_1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-
-
-	var getPageData = function getPageData(request) {
-		// this method can be replaced in case other content than html is expected to be received from server
-		// this function should always return {title, pageClass, originalContent, blocks, responseURL}
-		// in case page has invalid structure - return null
-		var html = request.responseText;
-		var pageObject = (0, helpers.getDataFromHtml)(html, this.options.containers);
-
-		if (pageObject) {
-			pageObject.responseURL = request.responseURL ? request.responseURL : window.location.href;
-		} else {
-			console.warn('Received page is invalid.');
-			return null;
-		}
-
-		return pageObject;
-	};
-
-	exports.default = getPageData;
-	});
-
-	unwrapExports(getPageData_1);
-
-	var plugins = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var use = exports.use = function use(plugin) {
-		if (!plugin.isSwupPlugin) {
-			console.warn('Not swup plugin instance ' + plugin + '.');
-			return;
-		}
-
-		this.plugins.push(plugin);
-		plugin.swup = this;
-		if (typeof plugin._beforeMount === 'function') {
-			plugin._beforeMount();
-		}
-		plugin.mount();
-
-		return this.plugins;
-	};
-
-	var unuse = exports.unuse = function unuse(plugin) {
-		var pluginReference = void 0;
-
-		if (typeof plugin === 'string') {
-			pluginReference = this.plugins.find(function (p) {
-				return plugin === p.name;
-			});
-		} else {
-			pluginReference = plugin;
-		}
-
-		if (!pluginReference) {
-			console.warn('No such plugin.');
-			return;
-		}
-
-		pluginReference.unmount();
-
-		if (typeof pluginReference._afterUnmount === 'function') {
-			pluginReference._afterUnmount();
-		}
-
-		var index = this.plugins.indexOf(pluginReference);
-		this.plugins.splice(index, 1);
-
-		return this.plugins;
-	};
-
-	var findPlugin = exports.findPlugin = function findPlugin(pluginName) {
-		return this.plugins.find(function (p) {
-			return pluginName === p.name;
-		});
-	};
-	});
-
-	unwrapExports(plugins);
-	var plugins_1 = plugins.use;
-	var plugins_2 = plugins.unuse;
-	var plugins_3 = plugins.findPlugin;
-
-	var lib = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	// modules
-
-
-
-
-	var _delegate2 = _interopRequireDefault(delegate_1);
-
-
-
-	var _Cache2 = _interopRequireDefault(Cache_1);
-
-
-
-	var _loadPage2 = _interopRequireDefault(loadPage_1);
-
-
-
-	var _renderPage2 = _interopRequireDefault(renderPage_1);
-
-
-
-	var _triggerEvent2 = _interopRequireDefault(triggerEvent_1);
-
-
-
-	var _on2 = _interopRequireDefault(on_1);
-
-
-
-	var _off2 = _interopRequireDefault(off_1);
-
-
-
-	var _updateTransition2 = _interopRequireDefault(updateTransition_1);
-
-
-
-	var _getAnimationPromises2 = _interopRequireDefault(getAnimationPromises_1);
-
-
-
-	var _getPageData2 = _interopRequireDefault(getPageData_1);
-
-
-
-
-
-
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Swup = function () {
-		function Swup(setOptions) {
-			_classCallCheck(this, Swup);
-
-			// default options
-			var defaults = {
-				animateHistoryBrowsing: false,
-				animationSelector: '[class*="transition-"]',
-				linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-				cache: true,
-				containers: ['#swup'],
-				requestHeaders: {
-					'X-Requested-With': 'swup',
-					Accept: 'text/html, application/xhtml+xml'
-				},
-				plugins: [],
-				skipPopStateHandling: function skipPopStateHandling(event) {
-					return !(event.state && event.state.source === 'swup');
-				}
-			};
-
-			// merge options
-			var options = _extends({}, defaults, setOptions);
-
-			// handler arrays
-			this._handlers = {
-				animationInDone: [],
-				animationInStart: [],
-				animationOutDone: [],
-				animationOutStart: [],
-				animationSkipped: [],
-				clickLink: [],
-				contentReplaced: [],
-				disabled: [],
-				enabled: [],
-				openPageInNewTab: [],
-				pageLoaded: [],
-				pageRetrievedFromCache: [],
-				pageView: [],
-				popState: [],
-				samePage: [],
-				samePageWithHash: [],
-				serverError: [],
-				transitionStart: [],
-				transitionEnd: [],
-				willReplaceContent: []
-			};
-
-			// variable for id of element to scroll to after render
-			this.scrollToElement = null;
-			// variable for promise used for preload, so no new loading of the same page starts while page is loading
-			this.preloadPromise = null;
-			// variable for save options
-			this.options = options;
-			// variable for plugins array
-			this.plugins = [];
-			// variable for current transition object
-			this.transition = {};
-			// variable for keeping event listeners from "delegate"
-			this.delegatedListeners = {};
-
-			// make modules accessible in instance
-			this.cache = new _Cache2.default();
-			this.cache.swup = this;
-			this.loadPage = _loadPage2.default;
-			this.renderPage = _renderPage2.default;
-			this.triggerEvent = _triggerEvent2.default;
-			this.on = _on2.default;
-			this.off = _off2.default;
-			this.updateTransition = _updateTransition2.default;
-			this.getAnimationPromises = _getAnimationPromises2.default;
-			this.getPageData = _getPageData2.default;
-			this.log = function () {}; // here so it can be used by plugins
-			this.use = plugins.use;
-			this.unuse = plugins.unuse;
-			this.findPlugin = plugins.findPlugin;
-
-			// enable swup
-			this.enable();
-		}
-
-		_createClass(Swup, [{
-			key: 'enable',
-			value: function enable() {
-				var _this = this;
-
-				// check for Promise support
-				if (typeof Promise === 'undefined') {
-					console.warn('Promise is not supported');
-					return;
-				}
-
-				// add event listeners
-				this.delegatedListeners.click = (0, _delegate2.default)(document, this.options.linkSelector, 'click', this.linkClickHandler.bind(this));
-				window.addEventListener('popstate', this.popStateHandler.bind(this));
-
-				// initial save to cache
-				var page = (0, helpers.getDataFromHtml)(document.documentElement.outerHTML, this.options.containers);
-				page.url = page.responseURL = (0, helpers.getCurrentUrl)();
-				if (this.options.cache) {
-					this.cache.cacheUrl(page);
-				}
-
-				// mark swup blocks in html
-				(0, helpers.markSwupElements)(document.documentElement, this.options.containers);
-
-				// mount plugins
-				this.options.plugins.forEach(function (plugin) {
-					_this.use(plugin);
-				});
-
-				// modify initial history record
-				window.history.replaceState(Object.assign({}, window.history.state, {
-					url: window.location.href,
-					random: Math.random(),
-					source: 'swup'
-				}), document.title, window.location.href);
-
-				// trigger enabled event
-				this.triggerEvent('enabled');
-
-				// add swup-enabled class to html tag
-				document.documentElement.classList.add('swup-enabled');
-
-				// trigger page view event
-				this.triggerEvent('pageView');
-			}
-		}, {
-			key: 'destroy',
-			value: function destroy() {
-				var _this2 = this;
-
-				// remove delegated listeners
-				this.delegatedListeners.click.destroy();
-				this.delegatedListeners.mouseover.destroy();
-
-				// remove popstate listener
-				window.removeEventListener('popstate', this.popStateHandler.bind(this));
-
-				// empty cache
-				this.cache.empty();
-
-				// unmount plugins
-				this.options.plugins.forEach(function (plugin) {
-					_this2.unuse(plugin);
-				});
-
-				// remove swup data atributes from blocks
-				(0, utils.queryAll)('[data-swup]').forEach(function (element) {
-					element.removeAttribute('data-swup');
-				});
-
-				// remove handlers
-				this.off();
-
-				// trigger disable event
-				this.triggerEvent('disabled');
-
-				// remove swup-enabled class from html tag
-				document.documentElement.classList.remove('swup-enabled');
-			}
-		}, {
-			key: 'linkClickHandler',
-			value: function linkClickHandler(event) {
-				// no control key pressed
-				if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
-					// index of pressed button needs to be checked because Firefox triggers click on all mouse buttons
-					if (event.button === 0) {
-						this.triggerEvent('clickLink', event);
-						event.preventDefault();
-						var link = new helpers.Link(event.delegateTarget);
-						if (link.getAddress() == (0, helpers.getCurrentUrl)() || link.getAddress() == '') {
-							// link to the same URL
-							if (link.getHash() != '') {
-								// link to the same URL with hash
-								this.triggerEvent('samePageWithHash', event);
-								var element = document.querySelector(link.getHash());
-								if (element != null) {
-									history.replaceState({
-										url: link.getAddress() + link.getHash(),
-										random: Math.random(),
-										source: 'swup'
-									}, document.title, link.getAddress() + link.getHash());
-								} else {
-									// referenced element not found
-									console.warn('Element for offset not found (' + link.getHash() + ')');
-								}
-							} else {
-								// link to the same URL without hash
-								this.triggerEvent('samePage', event);
-							}
-						} else {
-							// link to different url
-							if (link.getHash() != '') {
-								this.scrollToElement = link.getHash();
-							}
-
-							// get custom transition from data
-							var customTransition = event.delegateTarget.getAttribute('data-swup-transition');
-
-							// load page
-							this.loadPage({ url: link.getAddress(), customTransition: customTransition }, false);
-						}
-					}
-				} else {
-					// open in new tab (do nothing)
-					this.triggerEvent('openPageInNewTab', event);
-				}
-			}
-		}, {
-			key: 'popStateHandler',
-			value: function popStateHandler(event) {
-				if (this.options.skipPopStateHandling(event)) return;
-				var link = new helpers.Link(event.state ? event.state.url : window.location.pathname);
-				if (link.getHash() !== '') {
-					this.scrollToElement = link.getHash();
-				} else {
-					event.preventDefault();
-				}
-				this.triggerEvent('popState', event);
-				this.loadPage({ url: link.getAddress() }, event);
-			}
-		}]);
-
-		return Swup;
-	}();
-
-	exports.default = Swup;
-	});
-
-	var Swup = unwrapExports(lib);
-
-	var lib$1 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Plugin = function () {
-	    function Plugin() {
-	        _classCallCheck(this, Plugin);
-
-	        this.isSwupPlugin = true;
-	    }
-
-	    _createClass(Plugin, [{
-	        key: "mount",
-	        value: function mount() {
-	            // this is mount method rewritten by class extending
-	            // and is executed when swup is enabled with plugin
-	        }
-	    }, {
-	        key: "unmount",
-	        value: function unmount() {
-	            // this is unmount method rewritten by class extending
-	            // and is executed when swup with plugin is disabled
-	        }
-	    }, {
-	        key: "_beforeMount",
-	        value: function _beforeMount() {
-	            // here for any future hidden auto init
-	        }
-	    }, {
-	        key: "_afterUnmount",
-	        value: function _afterUnmount() {}
-	        // here for any future hidden auto-cleanup
-
-
-	        // this is here so we can tell if plugin was created by extending this class
-
-	    }]);
-
-	    return Plugin;
-	}();
-
-	exports.default = Plugin;
-	});
-
-	unwrapExports(lib$1);
-
-	var lib$2 = createCommonjsModule(function (module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-
-
-	var _plugin2 = _interopRequireDefault(lib$1);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var arrayify = function arrayify(list) {
-		return Array.prototype.slice.call(list);
-	};
-
-	var ScriptsPlugin = function (_Plugin) {
-		_inherits(ScriptsPlugin, _Plugin);
-
-		function ScriptsPlugin(options) {
-			_classCallCheck(this, ScriptsPlugin);
-
-			var _this = _possibleConstructorReturn(this, (ScriptsPlugin.__proto__ || Object.getPrototypeOf(ScriptsPlugin)).call(this));
-
-			_this.name = 'ScriptsPlugin';
-
-			_this.runScripts = function () {
-				var scope = _this.options.head && _this.options.body ? document : _this.options.head ? document.head : document.body;
-
-				var scripts = arrayify(scope.querySelectorAll('script:not([data-swup-ignore-script])'));
-
-				scripts.forEach(function (script) {
-					return _this.runScript(script);
-				});
-
-				_this.swup.log('Executed ' + scripts.length + ' scripts.');
-			};
-
-			_this.runScript = function (originalElement) {
-				var element = document.createElement('script');
-
-				var _iteratorNormalCompletion = true;
-				var _didIteratorError = false;
-				var _iteratorError = undefined;
-
-				try {
-					for (var _iterator = arrayify(originalElement.attributes)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						var _ref2 = _step.value;
-						var name = _ref2.name,
-						    value = _ref2.value;
-
-						element.setAttribute(name, value);
-					}
-				} catch (err) {
-					_didIteratorError = true;
-					_iteratorError = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion && _iterator.return) {
-							_iterator.return();
-						}
-					} finally {
-						if (_didIteratorError) {
-							throw _iteratorError;
-						}
-					}
-				}
-
-				element.textContent = originalElement.textContent;
-				element.setAttribute('async', 'false');
-
-				originalElement.replaceWith(element);
-				return element;
-			};
-
-			var defaultOptions = {
-				head: true,
-				body: true
-			};
-
-			_this.options = _extends({}, defaultOptions, options);
-			return _this;
-		}
-
-		_createClass(ScriptsPlugin, [{
-			key: 'mount',
-			value: function mount() {
-				this.swup.on('contentReplaced', this.runScripts);
-			}
-		}, {
-			key: 'unmount',
-			value: function unmount() {
-				this.swup.off('contentReplaced', this.runScripts);
-			}
-		}]);
-
-		return ScriptsPlugin;
-	}(_plugin2.default);
-
-	exports.default = ScriptsPlugin;
-	});
-
-	var SwupScriptsPlugin = unwrapExports(lib$2);
-
 	var lightgallery = createCommonjsModule(function (module) {
 	/*! lightgallery - v1.6.12 - 2019-02-19
 	* http://sachinchoolur.github.io/lightGallery/
@@ -37375,17 +35975,467 @@
 	}));
 	});
 
-	jquery(document).ready(function() {
+	var lgFullscreen = createCommonjsModule(function (module) {
+	/*! lg-fullscreen - v1.1.0 - 2019-02-19
+	* http://sachinchoolur.github.io/lightGallery
+	* Copyright (c) 2019 Sachin N; Licensed GPLv3 */
 
-	// Swup
+	(function (root, factory) {
+	  if (module.exports) {
+	    // Node. Does not work with strict CommonJS, but
+	    // only CommonJS-like environments that support module.exports,
+	    // like Node.
+	    module.exports = factory(jquery);
+	  } else {
+	    factory(root["jQuery"]);
+	  }
+	}(commonjsGlobal, function ($) {
 
-	// enable swup
-	const swup = new Swup({
-	  plugins: [new SwupScriptsPlugin()]
+	(function() {
+
+	    var defaults = {
+	        fullScreen: true
+	    };
+
+	    function isFullScreen() {
+	        return (
+	            document.fullscreenElement ||
+	            document.mozFullScreenElement ||
+	            document.webkitFullscreenElement ||
+	            document.msFullscreenElement
+	        );
+	    }
+
+	    var Fullscreen = function(element) {
+
+	        // get lightGallery core plugin data
+	        this.core = $(element).data('lightGallery');
+
+	        this.$el = $(element);
+
+	        // extend module defalut settings with lightGallery core settings
+	        this.core.s = $.extend({}, defaults, this.core.s);
+
+	        this.init();
+
+	        return this;
+	    };
+
+	    Fullscreen.prototype.init = function() {
+	        var fullScreen = '';
+	        if (this.core.s.fullScreen) {
+
+	            // check for fullscreen browser support
+	            if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled &&
+	                !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
+	                return;
+	            } else {
+	                fullScreen = '<span class="lg-fullscreen lg-icon"></span>';
+	                this.core.$outer.find('.lg-toolbar').append(fullScreen);
+	                this.fullScreen();
+	            }
+	        }
+	    };
+
+	    Fullscreen.prototype.requestFullscreen = function() {
+	        var el = document.documentElement;
+	        if (el.requestFullscreen) {
+	            el.requestFullscreen();
+	        } else if (el.msRequestFullscreen) {
+	            el.msRequestFullscreen();
+	        } else if (el.mozRequestFullScreen) {
+	            el.mozRequestFullScreen();
+	        } else if (el.webkitRequestFullscreen) {
+	            el.webkitRequestFullscreen();
+	        }
+	    };
+
+	    Fullscreen.prototype.exitFullscreen = function() {
+	        if (document.exitFullscreen) {
+	            document.exitFullscreen();
+	        } else if (document.msExitFullscreen) {
+	            document.msExitFullscreen();
+	        } else if (document.mozCancelFullScreen) {
+	            document.mozCancelFullScreen();
+	        } else if (document.webkitExitFullscreen) {
+	            document.webkitExitFullscreen();
+	        }
+	    };
+
+	    // https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+	    Fullscreen.prototype.fullScreen = function() {
+	        var _this = this;
+
+	        $(document).on('fullscreenchange.lg webkitfullscreenchange.lg mozfullscreenchange.lg MSFullscreenChange.lg', function() {
+	            _this.core.$outer.toggleClass('lg-fullscreen-on');
+	        });
+
+	        this.core.$outer.find('.lg-fullscreen').on('click.lg', function() {
+	            if (isFullScreen()) {
+	                _this.exitFullscreen();
+	            } else {
+	                _this.requestFullscreen();
+	            }
+	        });
+
+	    };
+
+	    Fullscreen.prototype.destroy = function() {
+
+	        // exit from fullscreen if activated
+	        if(isFullScreen()) {
+	            this.exitFullscreen();
+	        }
+
+	        $(document).off('fullscreenchange.lg webkitfullscreenchange.lg mozfullscreenchange.lg MSFullscreenChange.lg');
+	    };
+
+	    $.fn.lightGallery.modules.fullscreen = Fullscreen;
+
+	})();
+
+	}));
 	});
 
+	var lgVideo = createCommonjsModule(function (module) {
+	/*! lg-video - v1.2.2 - 2018-05-01
+	* http://sachinchoolur.github.io/lightGallery
+	* Copyright (c) 2018 Sachin N; Licensed GPLv3 */
 
-	  // Foundation
+	(function (root, factory) {
+	  if (module.exports) {
+	    // Node. Does not work with strict CommonJS, but
+	    // only CommonJS-like environments that support module.exports,
+	    // like Node.
+	    module.exports = factory(jquery);
+	  } else {
+	    factory(root["jQuery"]);
+	  }
+	}(commonjsGlobal, function ($) {
+
+	(function() {
+	    
+	        var defaults = {
+	            videoMaxWidth: '855px',
+
+	            autoplayFirstVideo: true,
+
+	            youtubePlayerParams: false,
+	            vimeoPlayerParams: false,
+	            dailymotionPlayerParams: false,
+	            vkPlayerParams: false,
+
+	            videojs: false,
+	            videojsOptions: {}
+	        };
+	    
+	        var Video = function(element) {
+	    
+	            this.core = $(element).data('lightGallery');
+	    
+	            this.$el = $(element);
+	            this.core.s = $.extend({}, defaults, this.core.s);
+	            this.videoLoaded = false;
+	    
+	            this.init();
+	    
+	            return this;
+	        };
+	    
+	        Video.prototype.init = function() {
+	            var _this = this;
+	    
+	            // Event triggered when video url found without poster
+	            _this.core.$el.on('hasVideo.lg.tm', onHasVideo.bind(this));
+	    
+	            // Set max width for video
+	            _this.core.$el.on('onAferAppendSlide.lg.tm', onAferAppendSlide.bind(this));
+	    
+	            if (_this.core.doCss() && (_this.core.$items.length > 1) && (_this.core.s.enableSwipe || _this.core.s.enableDrag)) {
+	                _this.core.$el.on('onSlideClick.lg.tm', function() {
+	                    var $el = _this.core.$slide.eq(_this.core.index);
+	                    _this.loadVideoOnclick($el);
+	                });
+	            } else {
+	    
+	                // For IE 9 and bellow
+	                _this.core.$slide.on('click.lg', function() {
+	                    _this.loadVideoOnclick($(this));
+	                });
+	            }
+	    
+	            _this.core.$el.on('onBeforeSlide.lg.tm', onBeforeSlide.bind(this));
+	    
+	            _this.core.$el.on('onAfterSlide.lg.tm', function(event, prevIndex) {
+	                _this.core.$slide.eq(prevIndex).removeClass('lg-video-playing');
+	            });
+	            
+	            if (_this.core.s.autoplayFirstVideo) {
+	                _this.core.$el.on('onAferAppendSlide.lg.tm', function (e, index) {
+	                    if (!_this.core.lGalleryOn) {
+	                        var $el = _this.core.$slide.eq(index);
+	                        setTimeout(function () {
+	                            _this.loadVideoOnclick($el);
+	                        }, 100);
+	                    }
+	                });
+	            }
+	        };
+	    
+	        Video.prototype.loadVideo = function(src, addClass, noPoster, index, html) {
+	            var video = '';
+	            var autoplay = 1;
+	            var a = '';
+	            var isVideo = this.core.isVideo(src, index) || {};
+	    
+	            // Enable autoplay based on setting for first video if poster doesn't exist
+	            if (noPoster) {
+	                if (this.videoLoaded) {
+	                    autoplay = 0;
+	                } else {
+	                    autoplay = this.core.s.autoplayFirstVideo ? 1 : 0;
+	                }
+	            }
+	    
+	            if (isVideo.youtube) {
+	    
+	                a = '?wmode=opaque&autoplay=' + autoplay + '&enablejsapi=1';
+	                if (this.core.s.youtubePlayerParams) {
+	                    a = a + '&' + $.param(this.core.s.youtubePlayerParams);
+	                }
+	    
+	                video = '<iframe class="lg-video-object lg-youtube ' + addClass + '" width="560" height="315" src="//www.youtube.com/embed/' + isVideo.youtube[1] + a + '" frameborder="0" allowfullscreen></iframe>';
+	    
+	            } else if (isVideo.vimeo) {
+	    
+	                a = '?autoplay=' + autoplay + '&api=1';
+	                if (this.core.s.vimeoPlayerParams) {
+	                    a = a + '&' + $.param(this.core.s.vimeoPlayerParams);
+	                }
+	    
+	                video = '<iframe class="lg-video-object lg-vimeo ' + addClass + '" width="560" height="315"  src="//player.vimeo.com/video/' + isVideo.vimeo[1] + a + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+	    
+	            } else if (isVideo.dailymotion) {
+	    
+	                a = '?wmode=opaque&autoplay=' + autoplay + '&api=postMessage';
+	                if (this.core.s.dailymotionPlayerParams) {
+	                    a = a + '&' + $.param(this.core.s.dailymotionPlayerParams);
+	                }
+	    
+	                video = '<iframe class="lg-video-object lg-dailymotion ' + addClass + '" width="560" height="315" src="//www.dailymotion.com/embed/video/' + isVideo.dailymotion[1] + a + '" frameborder="0" allowfullscreen></iframe>';
+	    
+	            } else if (isVideo.html5) {
+	                var fL = html.substring(0, 1);
+	                if (fL === '.' || fL === '#') {
+	                    html = $(html).html();
+	                }
+	    
+	                video = html;
+	    
+	            } else if (isVideo.vk) {
+	    
+	                a = '&autoplay=' + autoplay;
+	                if (this.core.s.vkPlayerParams) {
+	                    a = a + '&' + $.param(this.core.s.vkPlayerParams);
+	                }
+	    
+	                video = '<iframe class="lg-video-object lg-vk ' + addClass + '" width="560" height="315" src="//vk.com/video_ext.php?' + isVideo.vk[1] + a + '" frameborder="0" allowfullscreen></iframe>';
+	    
+	            }
+	    
+	            return video;
+	        };
+
+	        Video.prototype.loadVideoOnclick = function($el){
+
+	            var _this = this;
+	            // check slide has poster
+	            if ($el.find('.lg-object').hasClass('lg-has-poster') && $el.find('.lg-object').is(':visible')) {
+
+	                // check already video element present
+	                if (!$el.hasClass('lg-has-video')) {
+
+	                    $el.addClass('lg-video-playing lg-has-video');
+
+	                    var _src;
+	                    var _html;
+	                    var _loadVideo = function(_src, _html) {
+
+	                        $el.find('.lg-video').append(_this.loadVideo(_src, '', false, _this.core.index, _html));
+
+	                        if (_html) {
+	                            if (_this.core.s.videojs) {
+	                                try {
+	                                    videojs(_this.core.$slide.eq(_this.core.index).find('.lg-html5').get(0), _this.core.s.videojsOptions, function() {
+	                                        this.play();
+	                                    });
+	                                } catch (e) {
+	                                    console.error('Make sure you have included videojs');
+	                                }
+	                            } else {
+	                                _this.core.$slide.eq(_this.core.index).find('.lg-html5').get(0).play();
+	                            }
+	                        }
+
+	                    };
+
+	                    if (_this.core.s.dynamic) {
+
+	                        _src = _this.core.s.dynamicEl[_this.core.index].src;
+	                        _html = _this.core.s.dynamicEl[_this.core.index].html;
+
+	                        _loadVideo(_src, _html);
+
+	                    } else {
+
+	                        _src = _this.core.$items.eq(_this.core.index).attr('href') || _this.core.$items.eq(_this.core.index).attr('data-src');
+	                        _html = _this.core.$items.eq(_this.core.index).attr('data-html');
+
+	                        _loadVideo(_src, _html);
+
+	                    }
+
+	                    var $tempImg = $el.find('.lg-object');
+	                    $el.find('.lg-video').append($tempImg);
+
+	                    // @todo loading icon for html5 videos also
+	                    // for showing the loading indicator while loading video
+	                    if (!$el.find('.lg-video-object').hasClass('lg-html5')) {
+	                        $el.removeClass('lg-complete');
+	                        $el.find('.lg-video-object').on('load.lg error.lg', function() {
+	                            $el.addClass('lg-complete');
+	                        });
+	                    }
+
+	                } else {
+
+	                    var youtubePlayer = $el.find('.lg-youtube').get(0);
+	                    var vimeoPlayer = $el.find('.lg-vimeo').get(0);
+	                    var dailymotionPlayer = $el.find('.lg-dailymotion').get(0);
+	                    var html5Player = $el.find('.lg-html5').get(0);
+	                    if (youtubePlayer) {
+	                        youtubePlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+	                    } else if (vimeoPlayer) {
+	                        try {
+	                            $f(vimeoPlayer).api('play');
+	                        } catch (e) {
+	                            console.error('Make sure you have included froogaloop2 js');
+	                        }
+	                    } else if (dailymotionPlayer) {
+	                        dailymotionPlayer.contentWindow.postMessage('play', '*');
+
+	                    } else if (html5Player) {
+	                        if (_this.core.s.videojs) {
+	                            try {
+	                                videojs(html5Player).play();
+	                            } catch (e) {
+	                                console.error('Make sure you have included videojs');
+	                            }
+	                        } else {
+	                            html5Player.play();
+	                        }
+	                    }
+
+	                    $el.addClass('lg-video-playing');
+
+	                }
+	            }
+	        };
+	    
+	        Video.prototype.destroy = function() {
+	            this.videoLoaded = false;
+	        };
+
+	        function onHasVideo(event, index, src, html) {
+	            /*jshint validthis:true */
+	            var _this = this;
+	            _this.core.$slide.eq(index).find('.lg-video').append(_this.loadVideo(src, 'lg-object', true, index, html));
+	            if (html) {
+	                if (_this.core.s.videojs) {
+	                    try {
+	                        videojs(_this.core.$slide.eq(index).find('.lg-html5').get(0), _this.core.s.videojsOptions, function() {
+	                            if (!_this.videoLoaded && _this.core.s.autoplayFirstVideo) {
+	                                this.play();
+	                            }
+	                        });
+	                    } catch (e) {
+	                        console.error('Make sure you have included videojs');
+	                    }
+	                } else {
+	                    if(!_this.videoLoaded && _this.core.s.autoplayFirstVideo) {
+	                        _this.core.$slide.eq(index).find('.lg-html5').get(0).play();
+	                    }
+	                }
+	            }
+	        }
+
+	        function onAferAppendSlide(event, index) {
+	            /*jshint validthis:true */
+	            var $videoCont = this.core.$slide.eq(index).find('.lg-video-cont');
+	            if (!$videoCont.hasClass('lg-has-iframe')) {
+	                $videoCont.css('max-width', this.core.s.videoMaxWidth);
+	                this.videoLoaded = true;
+	            }
+	        }
+
+	        function onBeforeSlide(event, prevIndex, index) {
+	            /*jshint validthis:true */
+	            var _this = this;
+
+	            var $videoSlide = _this.core.$slide.eq(prevIndex);
+	            var youtubePlayer = $videoSlide.find('.lg-youtube').get(0);
+	            var vimeoPlayer = $videoSlide.find('.lg-vimeo').get(0);
+	            var dailymotionPlayer = $videoSlide.find('.lg-dailymotion').get(0);
+	            var vkPlayer = $videoSlide.find('.lg-vk').get(0);
+	            var html5Player = $videoSlide.find('.lg-html5').get(0);
+	            if (youtubePlayer) {
+	                youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+	            } else if (vimeoPlayer) {
+	                try {
+	                    $f(vimeoPlayer).api('pause');
+	                } catch (e) {
+	                    console.error('Make sure you have included froogaloop2 js');
+	                }
+	            } else if (dailymotionPlayer) {
+	                dailymotionPlayer.contentWindow.postMessage('pause', '*');
+
+	            } else if (html5Player) {
+	                if (_this.core.s.videojs) {
+	                    try {
+	                        videojs(html5Player).pause();
+	                    } catch (e) {
+	                        console.error('Make sure you have included videojs');
+	                    }
+	                } else {
+	                    html5Player.pause();
+	                }
+	            } if (vkPlayer) {
+	                $(vkPlayer).attr('src', $(vkPlayer).attr('src').replace('&autoplay', '&noplay'));
+	            }
+
+	            var _src;
+	            if (_this.core.s.dynamic) {
+	                _src = _this.core.s.dynamicEl[index].src;
+	            } else {
+	                _src = _this.core.$items.eq(index).attr('href') || _this.core.$items.eq(index).attr('data-src');
+
+	            }
+
+	            var _isVideo = _this.core.isVideo(_src, index) || {};
+	            if (_isVideo.youtube || _isVideo.vimeo || _isVideo.dailymotion || _isVideo.vk) {
+	                _this.core.$outer.addClass('lg-hide-download');
+	            }
+
+	        }
+	    
+	        $.fn.lightGallery.modules.video = Video;
+	    
+	    })();
+
+	}));
+	});
+
+	// Foundation
 	  // ----------
 	  
 	Foundation.Interchange.SPECIAL_QUERIES['medium-retina'] = 'only screen and (min-width: 40em), (min-width: 40em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 40em) and (min--moz-device-pixel-ratio: 2), (min-width: 40em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 40em) and (min-device-pixel-ratio: 2), (min-width: 40em) and (min-resolution: 192dpi), (min-width: 40em) and (min-resolution: 2dppx)';
@@ -37395,7 +36445,6 @@
 	  
 	jquery(document).foundation();
 
-
 	jquery('.video').lightGallery({
 	    counter: false,
 	    videoMaxWidth: '1080px',
@@ -37403,16 +36452,17 @@
 	        modestbranding: 1,
 	        showinfo: 0,
 	        rel: 0,
-	        autoplay: 0,
+	        autoplay: 0
 	    },
 	    vimeoPlayerParams: {
-	        autoplay: 0,
+	        autoplay: 1,
 	        title : 0,
 	        byline : 0,
 	        portrait : 0,
 	        color : 'FFFFFF'     
 	    }
 	});
+
 	// 1. Loading
 	// --------------------
 
@@ -37442,6 +36492,7 @@
 	jquery(function() {
 	window.addEventListener('load', AOS.refresh);
 	});
+
 
 	// 2. Hover Effect
 	// ---------------
@@ -37558,7 +36609,5 @@
 	    [...document.querySelectorAll('[data-fx="1"] > a, a[data-fx="1"]')].forEach(link => new HoverImgFx1(link));
 
 	}
-
-	});
 
 }());

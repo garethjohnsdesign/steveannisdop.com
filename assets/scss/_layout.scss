@@ -93,6 +93,11 @@ url('/assets/img/cursor@2x.png') 2x,
   @include links ($dark-gray, $black);
 }
 
+.black {
+  color: $black;
+  @include links ($black, $dark-gray);
+}
+
 .primary-color {
   color: get-color(primary);
 }
@@ -449,19 +454,24 @@ position: absolute;
 .loader {
   z-index: 1040;
   position: fixed;
-  background: $black;
+  background: $white;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%; 
   opacity: 0;
-  transition: $primary-transition;
   visibility: visible; 
+  transform: translateY(0%);
+  transition: transform 800ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
   &.loading {
     opacity: 1;
   }
   &.loaded {
-    opacity: 0;
-    visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 800ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+//     visibility: hidden;
   }
 }

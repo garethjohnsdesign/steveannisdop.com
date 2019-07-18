@@ -1729,6 +1729,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/assets/js/app copy.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/min/app copy-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/assets/js/app.js": {
 		"bF": 4,
 		"ft": 64,
@@ -1737,17 +1748,6 @@
 		"oA": 0,
 		"oAP": "/assets/js/min/app-min.js",
 		"oF": 1,
-		"sC": 1,
-		"tS": 0
-		},
-	"/assets/js/lg-video.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/js/min/lg-video-min.js",
-		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
@@ -2482,6 +2482,39 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/node_modules/jquery/dist/min/jquery-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/node_modules/lg-fullscreen/dist/lg-fullscreen.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/lg-fullscreen/dist/min/lg-fullscreen-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/node_modules/lg-video/dist/lg-video.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/lg-video/dist/min/lg-video-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/node_modules/lightgallery/dist/js/lightgallery-all.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/lightgallery/dist/js/min/lightgallery-all.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
