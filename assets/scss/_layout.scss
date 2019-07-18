@@ -358,22 +358,22 @@ color: $black;
 
 /* PAGE ANIMATIONS */
 
-.transition-fade {
+.swup-transition-fade {
   transition: 0.4s;
   opacity: 1;
 }
 
-html.is-animating .transition-fade {
+html.is-animating .swup-transition-fade {
   opacity: 0;
   transform: translateY(-100px);
 }
 
-.transition-left {
+.swup-transition-left {
   transition: 0.4s;
   transform: translateX(0);
 }
 
-html.is-animating .transition-left {
+html.is-animating .swup-transition-left {
   opacity: 0;
   transform: translateX(-100px);
 }

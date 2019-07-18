@@ -191,7 +191,11 @@ window.addEventListener('load', AOS.refresh);
 
 }
 
-const swup = new Swup(); // only this line when included with script tag
+const options = {
+    animationSelector: '[class*="swup-transition-"]',
+    containers: ['#swup', '#maintest']
+};
+const swup = new Swup(options);
 
 // run once 
 init();
