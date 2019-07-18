@@ -11,6 +11,7 @@ import SwupBodyClassPlugin from '@swup/body-class-plugin';
   // Foundation
   // ----------
 
+$(document).ready(function() {
 function init() {
 
 Foundation.Interchange.SPECIAL_QUERIES['medium-retina'] = 'only screen and (min-width: 40em), (min-width: 40em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 40em) and (min--moz-device-pixel-ratio: 2), (min-width: 40em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 40em) and (min-device-pixel-ratio: 2), (min-width: 40em) and (min-resolution: 192dpi), (min-width: 40em) and (min-resolution: 2dppx)';
@@ -41,17 +42,15 @@ $('.video').lightGallery({
 // 1. Loading
 // --------------------
 
-$(function() {
+$(".loader").removeClass("hide");
 
-    $(".loader").removeClass("hide");
+$(".loader").addClass("loading");
 
-    $(".loader").addClass("loading");
+setTimeout(function(){
+ $(".loader").addClass("loaded");
+}, 2500); 
 
-    setTimeout(function(){
-     $(".loader").addClass("loaded");
-    }, 2500); 
 
-});
 
 // 2. Animate on Scroll
 // --------------------
@@ -192,6 +191,9 @@ window.addEventListener('load', AOS.refresh);
 
 }
 
+// 2. Page Transitions
+// -------------------
+
 const options = {
     animationSelector: '[class*="swup-transition-"]',
     containers: ['#swup-body', '#swup-header'],
@@ -199,8 +201,10 @@ const options = {
 };
 const swup = new Swup(options);
 
-// run once 
+// 2. Run Once
+// -----------
 init();
 
-// this event runs for every page view after initial load
 swup.on('contentReplaced', init);
+
+});

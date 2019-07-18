@@ -37798,7 +37798,8 @@
 	// Foundation
 	  // ----------
 
-	function init$1() {
+	jquery(document).ready(function() {
+	function init() {
 
 	Foundation.Interchange.SPECIAL_QUERIES['medium-retina'] = 'only screen and (min-width: 40em), (min-width: 40em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 40em) and (min--moz-device-pixel-ratio: 2), (min-width: 40em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 40em) and (min-device-pixel-ratio: 2), (min-width: 40em) and (min-resolution: 192dpi), (min-width: 40em) and (min-resolution: 2dppx)';
 	Foundation.Interchange.SPECIAL_QUERIES['large-retina'] = 'only screen and (min-width: 64em), (min-width: 64em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 64em) and (min--moz-device-pixel-ratio: 2), (min-width: 64em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 64em) and (min-device-pixel-ratio: 2), (min-width: 64em) and (min-resolution: 192dpi), (min-width: 64em) and (min-resolution: 2dppx)';
@@ -37828,7 +37829,7 @@
 	// 1. Loading
 	// --------------------
 
-	jquery(function() {
+
 
 	    jquery(".loader").removeClass("hide");
 
@@ -37838,7 +37839,7 @@
 	     jquery(".loader").addClass("loaded");
 	    }, 2500); 
 
-	});
+
 
 	// 2. Animate on Scroll
 	// --------------------
@@ -37976,6 +37977,9 @@
 
 	}
 
+	// 2. Page Transitions
+	// -------------------
+
 	const options = {
 	    animationSelector: '[class*="swup-transition-"]',
 	    containers: ['#swup-body', '#swup-header'],
@@ -37983,10 +37987,12 @@
 	};
 	const swup = new Swup(options);
 
-	// run once 
-	init$1();
+	// 2. Run Once
+	// -----------
+	init();
 
-	// this event runs for every page view after initial load
-	swup.on('contentReplaced', init$1);
+	swup.on('contentReplaced', init);
+
+	});
 
 }());
