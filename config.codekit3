@@ -1978,6 +1978,28 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/node_modules/lg-fullscreen/dist/lg-fullscreen.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/lg-fullscreen/dist/min/lg-fullscreen-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/node_modules/lg-video/dist/lg-video.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/lg-video/dist/min/lg-video-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/node_modules/lightGallery/dist/js/lightgallery.js": {
 		"bF": 0,
 		"ft": 64,
