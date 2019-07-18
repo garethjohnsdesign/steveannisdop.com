@@ -10,6 +10,6 @@ image: "/uploads/nike-spark-brilliance.jpg"
 director: Fleur and Manu
 producer: Jules Chateleux
 production-company: Division
-layout: page
+layout: project
 ---
 

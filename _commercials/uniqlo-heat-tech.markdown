@@ -9,6 +9,6 @@ image: "/uploads/uniqlo-heat-tech.jpg"
 director: Norman Bates
 producer: Malachy Mcanenny
 production-company: Stink
-layout: page
+layout: project
 ---
 

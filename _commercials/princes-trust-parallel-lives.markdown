@@ -8,6 +8,6 @@ image: "/uploads/princes-trust-parallel-lives.jpg"
 
 director: Miles Jay
 production-company: Smuggler
-layout: page
+layout: project
 ---
 

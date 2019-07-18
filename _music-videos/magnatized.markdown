@@ -10,6 +10,6 @@ image: "/uploads/tom-odell-magnatized.jpg"
 director: George Bellfield
 producer: Tom Birmingham
 production-company: Somesuch
-layout: page
+layout: project
 ---
 

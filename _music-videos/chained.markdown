@@ -9,5 +9,5 @@ image: "/uploads/the-xx-chained.jpg"
 
 director: Young Replicants
 production-company: Pulse Films
-layout: page
+layout: project
 ---

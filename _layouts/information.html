@@ -7,7 +7,8 @@ layout: default
 
     <div class="small-12 medium-6 cell" data-aos="fade-in">
         {{page.content | markdownify}}
-    <div class="small dark-gray text-uppercase margin-top-2">Website by Reformation</div>
+    <div class="small dark-gray text-uppercase margin-top-2"><a href="https://www.garethjohnsdesign.com">Website by Reformation</a></div>
+
     </div>
 
     <div class="small-12 medium-shrink cell" data-aos="fade-in">
@@ -15,6 +16,12 @@ layout: default
         <div class="small text-uppercase">{{detail.title}}</div>
         {{detail.text | markdownify}}
       {% endfor %}
+
+    <ul class="menu">
+      <li><a href="/terms/">Terms</a></li>
+      <li class="padding-left-1"><a href="/privacy/">Privacy</a></li>
+    </ul>
+
     </div>
 
 

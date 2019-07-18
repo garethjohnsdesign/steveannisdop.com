@@ -10,5 +10,5 @@ image: "/uploads/florence-and-the-machine-st-jude.jpg"
 director: Vince Haycock
 producer: Ross Levine
 production-company: Park Pictures/9AM Films
-layout: page
+layout: project
 ---

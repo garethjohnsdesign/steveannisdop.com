@@ -10,5 +10,5 @@ image: "/uploads/song-for-someone.jpg"
 director: Vincent Haycock
 producer: Pete Vitali
 production-company: Park Pictures
-layout: page
+layout: project
 ---

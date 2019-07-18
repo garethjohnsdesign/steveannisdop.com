@@ -9,6 +9,6 @@ image: "/uploads/barclays-you-are-football.jpg"
 director: Benito Montorio
 producer:
 production-company: Blink
-layout: page
+layout: project
 ---
 

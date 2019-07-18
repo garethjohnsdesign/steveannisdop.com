@@ -9,6 +9,6 @@ image: "/uploads/sony-z2.jpg"
 director: Ben Newman
 producer: Louise Booth
 production-company: Pulse Films
-layout: page
+layout: project
 ---
 

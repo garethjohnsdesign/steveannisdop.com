@@ -9,6 +9,6 @@ image: "/uploads/top-boy.jpg"
 director: Keith Mcarthy
 producer:
 production-company: Channel 4
-layout: page
+layout: project
 ---
 

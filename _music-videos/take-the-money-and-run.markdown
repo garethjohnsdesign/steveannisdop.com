@@ -10,5 +10,5 @@ image: "/uploads/unkle-take-the-money-and-run.jpg"
 director: Tom Haines
 producer: Veronica Saez, David Wieder
 production-company: Colonel Blimp
-layout: page
+layout: project
 ---

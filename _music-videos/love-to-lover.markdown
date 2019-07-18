@@ -11,5 +11,5 @@ director: Vince Haycock
 production-company: Somesuch
 awards: 
 - Nomination for best cinematography UKMVAs 2013
-layout: page
+layout: project
 ---

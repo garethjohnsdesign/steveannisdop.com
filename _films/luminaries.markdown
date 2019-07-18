@@ -9,6 +9,6 @@ image: "/uploads/luminaries.jpg"
 director: Tom Haines
 producer: Ilduara Lamas & Tom Haines
 production-company: Colonel Blimp
-layout: page
+layout: project
 ---
 

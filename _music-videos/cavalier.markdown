@@ -9,5 +9,5 @@ image: "/uploads/james-vincent-mcmorrow-cavalier.jpg"
 
 director: Aoife McArdle
 production-company: Colonel Blimp
-layout: page
+layout: project
 ---

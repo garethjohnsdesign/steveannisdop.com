@@ -6,6 +6,6 @@ pagination:
   collection: music-videos
   sort_field: date
   sort_reverse: true
-  per_page: 24
+  per_page: 12
 layout: work
 ---

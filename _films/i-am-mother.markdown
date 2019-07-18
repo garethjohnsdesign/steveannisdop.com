@@ -9,6 +9,6 @@ image: "/uploads/i-am-mother.jpg"
 director: Grant Sputore
 producer: Timothy White, Kelvin Munro
 production-company: Penguin Empire, Southern Light Films
-layout: page
+layout: project
 ---
 

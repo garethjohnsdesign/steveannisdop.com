@@ -9,6 +9,6 @@ image: "/uploads/os-pixadores.jpg"
 director: Ben Newman
 producer:
 production-company: Pulse Films
-layout: page
+layout: project
 ---
 

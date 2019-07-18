@@ -10,6 +10,6 @@ image: "/uploads/ed-sheeran-castle-on-a-hill.jpg"
 director: George Belfield
 producer: Tom Gardener
 production-company: Somesuch
-layout: page
+layout: project
 ---
 

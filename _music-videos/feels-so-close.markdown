@@ -11,5 +11,5 @@ director: Vincent Haycock
 production-company: Logan and Sons
 awards:
 - UKMVA 2011 best cinematography nomination
-layout: page
+layout: project
 ---

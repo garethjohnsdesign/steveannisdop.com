@@ -10,5 +10,5 @@ image: "/uploads/begin-again.jpg"
 director: Young Replicant
 producer: Rick Green
 production-company: Pulse Films
-layout: page
+layout: project
 ---

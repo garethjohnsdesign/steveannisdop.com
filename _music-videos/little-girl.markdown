@@ -9,5 +9,5 @@ image: "/uploads/spiritualized-little-girl.jpg"
 
 director: Vincent Haycock
 production-company: Somesuch
-layout: page
+layout: project
 ---

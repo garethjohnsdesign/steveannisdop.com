@@ -9,6 +9,6 @@ image: "/uploads/gaa-major-moments.jpg"
 director: Aoife McArdle
 producer: Andrew Freedman
 production-company: Antidote films, Dublin
-layout: page
+layout: project
 ---
 

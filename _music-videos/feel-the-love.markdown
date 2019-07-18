@@ -10,5 +10,5 @@ image: "/uploads/rudimental-feel-the-love.jpg"
 director: Bob Harlow
 producer: Sarah Tognazzi, Marieta Blaskova
 production-company: Somesuch
-layout: page
+layout: project
 ---

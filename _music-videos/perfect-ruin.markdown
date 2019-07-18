@@ -10,5 +10,5 @@ image: "/uploads/kwabs-perfect-ruin.jpg"
 director: George Belfield
 producer: Jess Wylie
 production-company: Somesuch
-layout: page
+layout: project
 ---

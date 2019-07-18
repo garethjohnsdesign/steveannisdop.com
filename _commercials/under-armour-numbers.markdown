@@ -10,6 +10,6 @@ image: "/uploads/under-armour-numbers.jpg"
 director: Aoife McArdle
 producer: Laurie Bocaccio
 production-company: Anonymous Content
-layout: page
+layout: project
 ---
 

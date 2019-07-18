@@ -9,6 +9,6 @@ image: "/uploads/adidas-team-germany.jpg"
 director: The Dempseys
 producer: 
 production-company: Knucklehead
-layout: page
+layout: project
 ---
 

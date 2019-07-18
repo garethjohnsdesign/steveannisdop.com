@@ -9,6 +9,6 @@ image: "/uploads/american-family-insurance-anthem.jpg"
 director: Josh and Xander
 producer:
 production-company: Radical Media
-layout: page
+layout: project
 ---
 

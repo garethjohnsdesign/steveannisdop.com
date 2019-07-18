@@ -9,6 +9,6 @@ image: "/uploads/smart-car-skate-fortwo.jpg"
 director: Ben Newman
 producer: Oliver Roskill
 production-company: Pulse Films
-layout: page
+layout: project
 ---
 

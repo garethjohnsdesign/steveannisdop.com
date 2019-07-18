@@ -7,6 +7,6 @@ image: "/uploads/titane-lune.jpg"
 director: Lee Ford
 producer:
 production-company: Stable
-layout: page
+layout: project
 ---
 

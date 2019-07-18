@@ -9,5 +9,5 @@ image: "/uploads/arthur-beatrice-late.jpg"
 
 director: George Bellfield
 production-company: Somesuch
-layout: page
+layout: project
 ---

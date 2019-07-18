@@ -9,6 +9,6 @@ image: "/uploads/three-mobile-the-loneliest-whale.jpg"
 director: Tom Tagholm
 producer: Fran Thompson
 production-company: Park Pictures
-layout: page
+layout: project
 ---
 

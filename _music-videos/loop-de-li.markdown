@@ -10,5 +10,5 @@ image: "/uploads/bryan-ferry-loop-de-li.jpg"
 director: Aoife McArdle
 producer: Denna Carthamkhoob
 production-company: Somesuch
-layout: page
+layout: project
 ---

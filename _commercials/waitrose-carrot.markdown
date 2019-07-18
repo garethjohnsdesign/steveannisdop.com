@@ -9,6 +9,6 @@ image: "/uploads/waitrose-carrot.jpg"
 director: Tom Tagholm
 producer:
 production-company: Park Pictures
-layout: page
+layout: project
 ---
 

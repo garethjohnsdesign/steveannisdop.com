@@ -10,5 +10,5 @@ image: "/uploads/toys-fire.jpg"
 director: Louis De Caunes
 producer: Elias Belkeddar
 production-company: Iconoclast
-layout: page
+layout: project
 ---

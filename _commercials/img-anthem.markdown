@@ -9,6 +9,6 @@ image: "/uploads/img-anthem.jpg"
 director: Miles Jay
 producer: Patti Getker
 production-company: Smuggler
-layout: page
+layout: project
 ---
 

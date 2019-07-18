@@ -8,5 +8,5 @@ image: "/uploads/gary-clarke-jr-when-my-train-pulls-in.jpg"
 
 director: Carmela Makela
 producer: Jeanna Smith
-layout: page
+layout: project
 ---

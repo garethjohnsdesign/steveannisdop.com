@@ -484,6 +484,14 @@
 		"oAP": "/_layouts/page.html",
 		"oF": 0
 		},
+	"/_layouts/project.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/_layouts/project.html",
+		"oF": 0
+		},
 	"/_layouts/subscribe.html": {
 		"cB": 0,
 		"ft": 8192,

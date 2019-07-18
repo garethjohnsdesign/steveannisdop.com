@@ -8,6 +8,6 @@ image: "/uploads/italy-texas.jpg"
 director: Aoife McArdle
 producer:
 production-company: Colonel Blimp
-layout: page
+layout: project
 ---
 

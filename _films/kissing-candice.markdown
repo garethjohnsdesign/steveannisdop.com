@@ -9,6 +9,6 @@ image: "/uploads/kissing-candice.jpg"
 director: Aoife McArdle
 producer: Andrew Freedman
 production-company: Irish Film Board / Venom Films
-layout: page
+layout: project
 ---
 

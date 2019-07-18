@@ -10,6 +10,6 @@ image: "/uploads/mick-jagger-england-lost.jpg"
 director: Saam Farahmand
 producer: Amber Millington
 production-company: Black Sheep Studios
-layout: page
+layout: project
 ---
 

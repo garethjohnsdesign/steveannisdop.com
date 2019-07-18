@@ -9,5 +9,5 @@ image: "/uploads/calvin-harris-sweet-nothing.jpg"
 
 director: Vincent Haycock
 production-company: Somesuch
-layout: page
+layout: project
 ---

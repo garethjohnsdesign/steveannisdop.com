@@ -9,6 +9,6 @@ image: "/uploads/river-island-justanorm.jpg"
 director: Alex Turvey
 producer: 
 production-company: Blink
-layout: page
+layout: project
 ---
 

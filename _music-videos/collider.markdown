@@ -12,5 +12,5 @@ producer: Connor Hollman
 production-company: Rogue Films
 awards:
 - Nominated 2014 UKMVAs Best Cinematography
-layout: page
+layout: project
 ---

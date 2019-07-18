@@ -12,5 +12,5 @@ producer: Gail Davey
 production-company: Davey Inc
 awards:
 - UKMVA 2010 best cinematography nomination
-layout: page
+layout: project
 ---

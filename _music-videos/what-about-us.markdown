@@ -10,6 +10,6 @@ image: "/uploads/pink-what-about-us.jpg"
 director: Georgia Hudson
 producer: Katie Lambert
 production-company: Agile Films
-layout: page
+layout: project
 ---
 

@@ -11,5 +11,5 @@ producer: Tamsin Glasson / Brian Welsh
 production-company: Colonel Blimp
 awards:
 - Nominated 2014 Camerimage Festival
-layout: page
+layout: project
 ---

@@ -10,5 +10,5 @@ image: "/uploads/temper-trap-trembling-hands.jpg"
 director: Tom Haines
 producer: Tiernan Hanby
 production-company: Colonel Blimp
-layout: page
+layout: project
 ---

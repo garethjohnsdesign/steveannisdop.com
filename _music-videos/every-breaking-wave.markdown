@@ -13,5 +13,5 @@ production-company: Somesuch
 awards: 
 - Nominated Best Cinematography UKMVAs 2015  
 - Nominated Best Cinematography Camerimage 2015
-layout: page
+layout: project
 ---

@@ -12,5 +12,5 @@ producer: Ross Levine
 production-company: Park Pictures/9AM Films
 awards: 
 - Nominated Best Cinematography Camerimage 2015
-layout: page
+layout: project
 ---

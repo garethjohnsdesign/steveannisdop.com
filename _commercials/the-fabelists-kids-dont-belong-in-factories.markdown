@@ -9,6 +9,6 @@ image: "/uploads/the-fabelists-kids-dont-belong-in-factories.jpg"
 director: Olivier Venturini
 producer: Tim Francis
 production-company: Great Guns
-layout: page
+layout: project
 ---
 

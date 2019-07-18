@@ -10,6 +10,6 @@ image: "/uploads/apple-the-archivist.jpg"
 director: Michael Spiccia
 producer: Ben Scandrett Smith
 production-company: KK Barrett
-layout: page
+layout: project
 ---
 

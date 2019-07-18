@@ -9,5 +9,5 @@ image: "/uploads/peace-money.jpg"
 
 director: Ninian Doff
 production-company: Pulse Films
-layout: page
+layout: project
 ---

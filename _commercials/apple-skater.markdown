@@ -11,6 +11,6 @@ image: "/uploads/apple-skater.jpg"
 director: Sam Brown
 producer: Timory King
 production-company: Imperial Woodpecker
-layout: page
+layout: project
 ---
 

@@ -9,5 +9,5 @@ image: "/uploads/erste-bank-ceska.jpg"
 director: Dan Difelice
 producer: Ondrej Mathe
 production-company: Boogie Films
-layout: page
+layout: project
 ---

@@ -9,6 +9,6 @@ image: "/uploads/sire-marked-for-life.jpg"
 director: Ariel Kleiman 
 producer: Martin Poyner
 production-company: Partizan
-layout: page
+layout: project
 ---
 

@@ -9,6 +9,6 @@ image: "/uploads/powerade-rose-from-the-concrete.jpg"
 director: Jaron Albertin
 producer: Patrick Fisher
 production-company: Smuggler
-layout: page
+layout: project
 ---
 

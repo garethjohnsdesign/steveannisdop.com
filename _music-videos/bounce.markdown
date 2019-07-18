@@ -9,5 +9,5 @@ image: "/uploads/calvin-harris-bounce.jpg"
 
 director: Vincent Haycock
 production-company: Logan and Sons
-layout: page
+layout: project
 ---
