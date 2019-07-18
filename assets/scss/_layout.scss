@@ -33,15 +33,6 @@
 // 2. Global
 // ---------
 
-a {
-	outline: none;
-}
-
-button:focus,
-a:focus {
-	outline: none;
-}
-
 body {
   cursor: default;
   font-kerning: normal;
@@ -61,22 +52,13 @@ svg {
   outline: 0;
 }
 
-/*
-body {
-cursor: url('/assets/img/cursor.png') 16 16, auto !important;
-cursor: -webkit-image-set(
-url('/assets/img/cursor.png') 1x,
-url('/assets/img/cursor@2x.png') 2x,
-) 16 16, auto !important;
-}
-*/
-
 
 // 4. Color
 // --------
 
 .white {
   color: $white;
+  @include links ($white, $medium-gray);
 }
 
 .medium-gray {
@@ -86,6 +68,7 @@ url('/assets/img/cursor@2x.png') 2x,
 
 .light-gray {
   color: $light-gray;
+  @include links ($light-gray, $medium-gray);
 }
 
 .dark-gray {
@@ -95,7 +78,7 @@ url('/assets/img/cursor@2x.png') 2x,
 
 .black {
   color: $black;
-  @include links ($black, $dark-gray);
+  @include links ($black, $medium-gray);
 }
 
 .primary-color {
@@ -120,12 +103,12 @@ url('/assets/img/cursor@2x.png') 2x,
 
 .black-background {
   background-color: $black;
-  @include links ($dark-gray, $medium-gray);
 }
 
 
 // 5. Typography
 // -------------
+
 .small {
 font-size: 80%;
 letter-spacing: 0.1rem;
