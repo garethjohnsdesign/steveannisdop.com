@@ -1,16 +1,19 @@
 import $ from "jquery";
 import Foundation from 'foundation-sites';
-import AOS from 'aos';
+// import AOS from 'aos';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
+import Swup from 'swup';
 import "lightGallery";
 import "lg-fullscreen";
 import "lg-video";
-
-
+import SwupBodyClassPlugin from '@swup/body-class-plugin';
 
   // Foundation
   // ----------
-  
+
+$(document).ready(function() {
+function init() {
+
 Foundation.Interchange.SPECIAL_QUERIES['medium-retina'] = 'only screen and (min-width: 40em), (min-width: 40em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 40em) and (min--moz-device-pixel-ratio: 2), (min-width: 40em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 40em) and (min-device-pixel-ratio: 2), (min-width: 40em) and (min-resolution: 192dpi), (min-width: 40em) and (min-resolution: 2dppx)';
 Foundation.Interchange.SPECIAL_QUERIES['large-retina'] = 'only screen and (min-width: 64em), (min-width: 64em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 64em) and (min--moz-device-pixel-ratio: 2), (min-width: 64em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 64em) and (min-device-pixel-ratio: 2), (min-width: 64em) and (min-resolution: 192dpi), (min-width: 64em) and (min-resolution: 2dppx)';
 Foundation.Interchange.SPECIAL_QUERIES['xlarge-retina'] = 'only screen and (min-width: 75em), (min-width: 75em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 75em) and (min--moz-device-pixel-ratio: 2), (min-width: 75em) and (-o-min-device-pixel-ratio: 2/1), (min-width: 75em) and (min-device-pixel-ratio: 2), (min-width: 75em) and (min-resolution: 192dpi), (min-width: 75em) and (min-resolution: 2dppx)';
@@ -39,21 +42,20 @@ $('.video').lightGallery({
 // 1. Loading
 // --------------------
 
-$(function() {
+$(".loader").removeClass("hide");
 
-    $(".loader").removeClass("hide");
+$(".loader").addClass("loading");
 
-    $(".loader").addClass("loading");
+setTimeout(function(){
+ $(".loader").addClass("loaded");
+}, 2500); 
 
-    setTimeout(function(){
-     $(".loader").addClass("loaded");
-    }, 2500); 
 
-});
 
 // 2. Animate on Scroll
 // --------------------
 
+/*
 $(function() {
   AOS.init({ 
    offset: 64,
@@ -65,6 +67,7 @@ $(function() {
 $(function() {
 window.addEventListener('load', AOS.refresh);
 });
+*/
 
 
 // 2. Hover Effect
@@ -185,3 +188,23 @@ window.addEventListener('load', AOS.refresh);
     [...document.querySelectorAll('[data-fx="1"] > a, a[data-fx="1"]')].forEach(link => new HoverImgFx1(link));
 
 }
+
+}
+
+// 2. Page Transitions
+// -------------------
+
+const options = {
+    animationSelector: '[class*="swup-transition-"]',
+    containers: ['#swup-body', '#swup-header'],
+    plugins: [new SwupBodyClassPlugin()]
+};
+const swup = new Swup(options);
+
+// 2. Run Once
+// -----------
+init();
+
+swup.on('contentReplaced', init);
+
+});
