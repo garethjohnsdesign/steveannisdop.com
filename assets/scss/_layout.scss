@@ -30,6 +30,87 @@
   }
 }
 
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+ .content {
+    transition: $primary-transition;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// X. Loading
+// ----------
+
+.loader {
+    z-index: 1040;
+    position: fixed;
+    background: $white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; 
+    opacity: 0;
+    visibility: visible; 
+    transform: translateY(0%);
+    transition: transform 800ms;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    overflow: hidden;
+  &.loading {
+    opacity: 1;
+  }
+  &.loaded {
+    transform: translateY(-100%);
+    transition: transform 800ms;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+// X. Animations
+// -------------
+
+.swup-transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .swup-transition-fade {
+  opacity: 0;
+}
+
+.swup-transition-left {
+  transition: 0.4s;
+  transform: translateX(0);
+}
+
+html.is-animating .swup-transition-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.swup-transition-up {
+  transform: translateY(0);
+  transition: 0.4s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+html.is-animating .swup-transition-up {
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
 // 2. Global
 // ---------
 
@@ -73,7 +154,7 @@ svg {
 
 .dark-gray {
   color: $dark-gray;
-  @include links ($dark-gray, $black);
+  @include links ($dark-gray, $white);
 }
 
 .black {
@@ -105,21 +186,20 @@ svg {
   background-color: $black;
 }
 
-
 // 5. Typography
 // -------------
 
 .small {
-font-size: 80%;
-letter-spacing: 0.1rem;
+  font-size: 80%;
+  letter-spacing: 0.1rem;
 }
 
 .menu .menu-text {
-font-weight: normal;
+  font-weight: normal;
 }
 
 strong, b {
-font-family: $sans-bold;
+  font-family: $sans-bold;
 }
 
 a {
@@ -152,89 +232,8 @@ p {
   font-family: $sans-bold;
 }
 
-// X. Header
+// X. Layout
 // ---------
-
-
-// X. Images
-// ---------
-
-
-// X. Offcanvas
-// ---------
-
-.off-canvas-wrapper {
-    overflow: visible;
-}
-
-.off-canvas-content {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-header, nav, footer {
-    flex-shrink: 0;
-}
-
-main {
-    flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
-}
-
-.off-canvas {
-  @include links ($white, $medium-gray);
-  color: $white;
-}
-
-.off-canvas .menu .active a {
-  color: $medium-gray;
-}
-
-// X. News
-// ---------
-
-// X. Clients
-// -----------
-
-
-
-// X. Footer
-// ---------
-
-.navigation {
-z-index: 1;
-}
-
-footer {
-  color: $medium-gray;
-  @include links ($medium-gray, $black);
-}
-
-footer {
-  color: $medium-gray;
-  @include links ($medium-gray, $black);
-}
-
-
-.home .hamburger-inner {
-  &,
-  &::before,
-  &::after {
-    background-color: $white;
-  }
-}
-
-$scrollhide-nav-transition-speed: 1s;
-
-.scrollhide-nav {
-  transition: transform $scrollhide-nav-transition-speed cubic-bezier(0.86, 0, 0.07, 1);
-
-  &.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
 
 .padding-vertical-space-1 {
   @include breakpoint(small) {
@@ -302,93 +301,25 @@ footer {
   }
 }
 
-.pagination-image {
-  background-size: cover; 
-  background-position: 50%;
-  background-color: $light-gray;
-}
-
-
-@mixin aspect-ratio($width, $height) {
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-  }
- .content {
-    transition: $primary-transition;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-
 .image {
   @include aspect-ratio (2.4, 1);
   background-size: cover; 
   background-position: 50%;
 }
 
-.orbit-previous, .orbit-next {
-color: $black;
+// X. Home
+// -------
+
+.home-link:after {
+content: 'Steve Annis';
 }
 
-
-.works__list {
-  color: $medium-gray;
-  @include links ($medium-gray, $black);
+.home-link:hover:after {
+  content: 'Director of Photography';
 }
 
-.works__list a {
-  display: inline-block;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.works__list .active {
-  color: $black;
-}
-
-/* PAGE ANIMATIONS */
-
-.swup-transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-
-html.is-animating .swup-transition-fade {
-  opacity: 0;
-}
-
-.swup-transition-left {
-  transition: 0.4s;
-  transform: translateX(0);
-}
-
-html.is-animating .swup-transition-left {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-.swup-transition-up {
-  transform: translateY(0);
-  transition: 0.4s;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-html.is-animating .swup-transition-up {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-// Hover Effect
+// X. Hover Effect
+// ---------------
 
 .block__link {
 	position: relative;
@@ -414,31 +345,13 @@ html.is-animating .swup-transition-up {
 	position: relative;
 }
 
-
 .hover-reveal__img {
 	background-size: cover;
 	background-position: 50% 50%;
 }
 
-.home-link:after {
-content: 'Steve Annis';
-}
-
-.home-link:hover:after {
-  content: 'Director of Photography';
-}
-
-.meta {
-background-color: transparent;
-top: 50% !important;
-left: 50% !important;
-transform: translate(-50%, -50%);
-position: absolute;
-}
-
-.project__client {
-  padding-right: 0.5rem;
-}
+// X. Partials
+// -----------
 
 .excerpt a  {
   transition: $primary-transition;
@@ -453,30 +366,17 @@ position: absolute;
   }
 }
 
-// 5. Loading
-// ------
+// X. Project
+// ----------
 
-.loader {
-  z-index: 1040;
-  position: fixed;
-  background: $white;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%; 
-  opacity: 0;
-  visibility: visible; 
-  transform: translateY(0%);
-  transition: transform 800ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  overflow: hidden;
-  &.loading {
-    opacity: 1;
-  }
-  &.loaded {
-  transform: translateY(-100%);
-  transition: transform 800ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-//     visibility: hidden;
-  }
+.project__meta {
+background-color: transparent;
+top: 50% !important;
+left: 50% !important;
+transform: translate(-50%, -50%);
+position: absolute;
+}
+
+.project__client {
+  padding-right: 0.5rem;
 }

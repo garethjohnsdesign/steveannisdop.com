@@ -6,6 +6,7 @@ import Swup from 'swup';
 import "lightGallery";
 import "lg-fullscreen";
 import "lg-video";
+import SwupBodyClassPlugin from '@swup/body-class-plugin';
 
   // Foundation
   // ----------
@@ -193,7 +194,8 @@ window.addEventListener('load', AOS.refresh);
 
 const options = {
     animationSelector: '[class*="swup-transition-"]',
-    containers: ['#swup', '#maintest']
+    containers: ['#swup-body', '#swup-header'],
+    plugins: [new SwupBodyClassPlugin()]
 };
 const swup = new Swup(options);
 
