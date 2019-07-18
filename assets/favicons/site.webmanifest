@@ -1,6 +1,6 @@
 {
-    "name": "Hot Feet",
-    "short_name": "Hot Feet",
+    "name": "Steve Annis",
+    "short_name": "Steve Annis",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0a0a0a",
+    "background_color": "#0a0a0a",
     "display": "standalone"
 }

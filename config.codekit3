@@ -1407,7 +1407,7 @@
 		},
 	"/assets/favicons/android-chrome-192x192.png": {
 		"ft": 32768,
-		"iS": 2570,
+		"iS": 1853,
 		"oA": 0,
 		"oAP": "/assets/favicons/android-chrome-192x192.png",
 		"oF": 0,
@@ -1418,7 +1418,7 @@
 		},
 	"/assets/favicons/android-chrome-512x512.png": {
 		"ft": 32768,
-		"iS": 7421,
+		"iS": 4419,
 		"oA": 0,
 		"oAP": "/assets/favicons/android-chrome-512x512.png",
 		"oF": 0,
@@ -1429,7 +1429,7 @@
 		},
 	"/assets/favicons/apple-touch-icon.png": {
 		"ft": 32768,
-		"iS": 1211,
+		"iS": 1576,
 		"oA": 0,
 		"oAP": "/assets/favicons/apple-touch-icon.png",
 		"oF": 0,
@@ -1448,7 +1448,7 @@
 		},
 	"/assets/favicons/favicon-16x16.png": {
 		"ft": 32768,
-		"iS": 546,
+		"iS": 672,
 		"oA": 0,
 		"oAP": "/assets/favicons/favicon-16x16.png",
 		"oF": 0,
@@ -1459,7 +1459,7 @@
 		},
 	"/assets/favicons/favicon-32x32.png": {
 		"ft": 32768,
-		"iS": 664,
+		"iS": 947,
 		"oA": 0,
 		"oAP": "/assets/favicons/favicon-32x32.png",
 		"oF": 0,
@@ -1478,7 +1478,7 @@
 		},
 	"/assets/favicons/mstile-144x144.png": {
 		"ft": 32768,
-		"iS": 7437,
+		"iS": 2297,
 		"oA": 0,
 		"oAP": "/assets/favicons/mstile-144x144.png",
 		"oF": 0,
@@ -1489,7 +1489,7 @@
 		},
 	"/assets/favicons/mstile-150x150.png": {
 		"ft": 32768,
-		"iS": 1678,
+		"iS": 2415,
 		"oA": 0,
 		"oAP": "/assets/favicons/mstile-150x150.png",
 		"oF": 0,
@@ -1500,7 +1500,7 @@
 		},
 	"/assets/favicons/mstile-310x150.png": {
 		"ft": 32768,
-		"iS": 7433,
+		"iS": 2542,
 		"oA": 0,
 		"oAP": "/assets/favicons/mstile-310x150.png",
 		"oF": 0,
@@ -1511,7 +1511,7 @@
 		},
 	"/assets/favicons/mstile-310x310.png": {
 		"ft": 32768,
-		"iS": 16242,
+		"iS": 4401,
 		"oA": 0,
 		"oAP": "/assets/favicons/mstile-310x310.png",
 		"oF": 0,
@@ -1522,7 +1522,7 @@
 		},
 	"/assets/favicons/mstile-70x70.png": {
 		"ft": 32768,
-		"iS": 4921,
+		"iS": 1848,
 		"oA": 0,
 		"oAP": "/assets/favicons/mstile-70x70.png",
 		"oF": 0,
@@ -1981,7 +1981,7 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"/node_modules/lightgallery/dist/js/lightgallery.js": {
+	"/node_modules/lightGallery/dist/js/lightgallery.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
