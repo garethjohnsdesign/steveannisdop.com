@@ -740,6 +740,12 @@
 		"oAP": "/_music-videos/when-my-train-pulls-in.markdown",
 		"oF": 0
 		},
+	"/_site": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/_site",
+		"oF": 0
+		},
 	"/_uploads/adidas-team-germany.jpg": {
 		"ft": 16384,
 		"iS": 237976,
