@@ -332,14 +332,6 @@
 		"oAP": "/_includes/images/interchange-img-small-12-medium-6-cell.html",
 		"oF": 0
 		},
-	"/_includes/off-canvas/menu.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/_includes/off-canvas/menu.html",
-		"oF": 0
-		},
 	"/_includes/pagination/collection.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -418,14 +410,6 @@
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/_includes/site/scripts.html",
-		"oF": 0
-		},
-	"/_includes/site/subscribe.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/_includes/site/subscribe.html",
 		"oF": 0
 		},
 	"/_layouts/compress.html": {
@@ -2011,7 +1995,7 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"/node_modules/lightGallery/dist/js/lightgallery.js": {
+	"/node_modules/lightgallery/dist/js/lightgallery.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,

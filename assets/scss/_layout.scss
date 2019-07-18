@@ -1,21 +1,16 @@
 //  Table of Contents:
 //
 //   1. Mixins
-//   2. Global
-//   3. Plugins
-//   4. Color
-//   5. Typography
-//   6. Navigation
-//   7. Off-canvas
-//   8. Layout
-//   9. Home
-//   10. Menu / Food
-//   11. Find Us
-//   12. Story
-//   13. Hire Us
-//   14. Contact
-//   15. Page
-//   16. Footer
+//   2. Loading
+//   3. Animations
+//   4. Global
+//   5. Color
+//   6. Typography
+//   7. Layout
+//   8. Home
+//   9. Hover Effect
+//   10. Partials
+//   11. Project
 
 
 // 1. Mixins
@@ -51,7 +46,7 @@
   }
 }
 
-// X. Loading
+// 2. Loading
 // ----------
 
 .loader {
@@ -78,7 +73,7 @@
   }
 }
 
-// X. Animations
+// 3. Animations
 // -------------
 
 .swup-transition-fade {
@@ -111,7 +106,7 @@ html.is-animating .swup-transition-up {
   transform: translateY(-1rem);
 }
 
-// 2. Global
+// 4. Global
 // ---------
 
 body {
@@ -134,7 +129,7 @@ svg {
 }
 
 
-// 4. Color
+// 5. Color
 // --------
 
 .white {
@@ -186,7 +181,7 @@ svg {
   background-color: $black;
 }
 
-// 5. Typography
+// 6. Typography
 // -------------
 
 .small {
@@ -232,7 +227,7 @@ p {
   font-family: $sans-bold;
 }
 
-// X. Layout
+// 7. Layout
 // ---------
 
 .padding-vertical-space-1 {
@@ -307,7 +302,7 @@ footer {
   background-position: 50%;
 }
 
-// X. Home
+// 8. Home
 // -------
 
 .home-link:after {
@@ -318,7 +313,7 @@ content: 'Steve Annis';
   content: 'Director of Photography';
 }
 
-// X. Hover Effect
+// 9. Hover Effect
 // ---------------
 
 .block__link {
@@ -350,8 +345,8 @@ content: 'Steve Annis';
 	background-position: 50% 50%;
 }
 
-// X. Partials
-// -----------
+// 10. Partials
+// ------------
 
 .excerpt a  {
   transition: $primary-transition;
@@ -366,8 +361,8 @@ content: 'Steve Annis';
   }
 }
 
-// X. Project
-// ----------
+// 11. Project
+// -----------
 
 .project__meta {
 background-color: transparent;
