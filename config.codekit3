@@ -1956,17 +1956,6 @@
 		"oAP": "/build/node_modules",
 		"oF": 0
 		},
-	"/node_modules/aos/dist/aos.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/node_modules/aos/dist/min/aos-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"/node_modules/foundation-sites/dist/js/foundation.esm.js": {
 		"bF": 0,
 		"ft": 64,
@@ -1996,6 +1985,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/node_modules/lightGallery/dist/js/min/lightgallery-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/node_modules/swup/lib/index.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/node_modules/swup/lib/min/index-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
