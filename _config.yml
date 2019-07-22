@@ -19,7 +19,6 @@ url: https://www.steveannisdop.com
 description: Award-winning Director of Photography
 permalink: pretty
 exclude:
-- Gemfile.lock
 - bower.json
 - package.json
 - config.codekit3
