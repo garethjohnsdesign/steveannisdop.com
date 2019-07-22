@@ -24,5 +24,9 @@
 <title>play_arrow</title>
 <path d="M8.016 5.016l10.969 6.984-10.969 6.984v-13.969z"></path>
 </symbol>
+<symbol id="icon-remove" viewBox="0 0 24 24">
+<title>remove</title>
+<path d="M18.984 12.984h-13.969v-1.969h13.969v1.969z"></path>
+</symbol>
 </defs>
 </svg>
