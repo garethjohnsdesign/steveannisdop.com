@@ -33,7 +33,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-imgix (1.1.0)
       imgix (~> 1.1.0)
-    jekyll-paginate-v2 (2.1.0)
+    jekyll-paginate-v2 (2.0.0)
       jekyll (~> 3.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
@@ -72,7 +72,7 @@ DEPENDENCIES
   jekyll
   jekyll-feed
   jekyll-imgix
-  jekyll-paginate-v2
+  jekyll-paginate-v2 (= 2.0.0)
   jekyll-seo-tag
   jekyll-sitemap
 
