@@ -3,7 +3,7 @@
 
 import $ from "jquery";
 import Foundation from 'foundation-sites';
-// import AOS from 'aos';
+import AOS from 'aos';
 import {
   TimelineMax,
   CSSPlugin,
@@ -72,7 +72,6 @@ if ($("body").hasClass("home")) {
 
 // 2. Animate on Scroll
 // --------------------
-/*
 $(function() {
   AOS.init({ 
    offset: 64,
@@ -84,7 +83,6 @@ $(function() {
 $(function() {
 window.addEventListener('load', AOS.refresh);
 });
-*/
    
 // 2. Hover Effect
 // ---------------
