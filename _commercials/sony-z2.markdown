@@ -5,7 +5,6 @@ position: 0
 client: Sony
 video: https://vimeo.com/97138442
 image: "/uploads/sony-z2.jpg"
-
 director: Ben Newman
 producer: Louise Booth
 production-company: Pulse Films

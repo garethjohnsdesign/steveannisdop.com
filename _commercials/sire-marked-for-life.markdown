@@ -5,8 +5,7 @@ position: 0
 client: Sire
 video: https://vimeo.com/23635567
 image: "/uploads/sire-marked-for-life.jpg"
-
-director: Ariel Kleiman 
+director: Ariel Kleiman
 producer: Martin Poyner
 production-company: Partizan
 layout: project

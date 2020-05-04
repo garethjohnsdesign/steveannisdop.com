@@ -5,9 +5,8 @@ position: 0
 client: Barclays
 video: https://vimeo.com/74448460
 image: "/uploads/barclays-you-are-football.jpg"
-
 director: Benito Montorio
-producer:
+producer: 
 production-company: Blink
 layout: project
 ---

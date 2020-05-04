@@ -5,7 +5,6 @@ position: 0
 client: River Island
 video: https://vimeo.com/84135768
 image: "/uploads/river-island-justanorm.jpg"
-
 director: Alex Turvey
 producer: 
 production-company: Blink

@@ -2,19 +2,21 @@
 title: Steve Annis
 timezone: UTC
 collections:
-  uploads:
-    title: Uploads
-    output: false
-  music-videos:
-    title: Music Videos
-    output: true
   commercials:
     title: Commercials
     output: true
   films:
     title: Films
     output: true
-defaults:
+  music-videos:
+    title: Music Videos
+    output: true
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: false
 url: https://www.steveannisdop.com
 description: Award-winning Director of Photography
 permalink: pretty
@@ -42,8 +44,8 @@ logo: "/assets/img/logo.svg"
 per_page: 12
 date_format: "%b %Y"
 future: true
-social: 
- instagram: https://www.instagram.com/steveannisdop/
+social:
+  instagram: https://www.instagram.com/steveannisdop/
 compress_html:
   comments:
   - "<!-- "

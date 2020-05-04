@@ -10,8 +10,9 @@ image: "/uploads/u2-every-breaking-wave.jpg"
 director: Aoife McArdle
 producer: Nick Goldsmith
 production-company: Somesuch
-awards: 
-- Nominated Best Cinematography UKMVAs 2015  
+awards:
+- Nominated Best Cinematography UKMVAs 2015
 - Nominated Best Cinematography Camerimage 2015
 layout: project
 ---
+

@@ -5,9 +5,8 @@ position: 0
 client: Waitrose
 video: https://vimeo.com/90988898
 image: "/uploads/waitrose-carrot.jpg"
-
 director: Tom Tagholm
-producer:
+producer: 
 production-company: Park Pictures
 layout: project
 ---

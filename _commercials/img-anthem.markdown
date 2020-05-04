@@ -5,7 +5,6 @@ position: 0
 client: IMG
 video: https://vimeo.com/161474876
 image: "/uploads/img-anthem.jpg"
-
 director: Miles Jay
 producer: Patti Getker
 production-company: Smuggler
