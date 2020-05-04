@@ -1,0 +1,68 @@
+{% set bodyClass = 'about' %}
+
+{% if entry.seoTitle | length %}
+{% set seoTitle = entry.seoTitle %}
+{% else %}
+{% set seoTitle = entry.title %}
+{% endif %}
+
+{% if entry.seoDescription | length %}
+{% set seoDescription = entry.seoDescription %}
+{% endif %}
+
+{% set allProjects = craft.entries
+.section('projects')
+.orderBy('postDate desc')
+.limit(null)
+.all() %}
+
+{% extends "_layouts/site" %}
+
+{% block navigation %}
+{% include "_includes/global/navigation" %}
+{% endblock %}
+
+
+{% block main %}
+<div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y align-center align-middle">
+        <div class="small-12 cell text-center">
+          {{entry.copy}}
+        </div>
+      </div>
+
+
+      {% for date, projects in allProjects | group("postDate|date('Y')") %}
+          <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="small-12 medium-12 cell padding-bottom-0 text-center">
+              <h5 class="sans-bold margin-bottom-0">{{ date }}</h4>
+            </div>
+          </div>
+          {% for project in projects %}
+          <div class="grid-x grid-padding-x grid-padding-y border-bottom">
+          <div class="small-12 medium-4 cell">
+            {{ project.title }}
+          </div>
+          <div class="small-12 medium-3 cell">
+            {{ project.agency }}
+          </div>
+          <div class="small-12 medium-5 cell">
+          {% if project.awards|length %}
+            {% for award in project.awards %}
+              <div>{{ award.award }}</div>
+            {% endfor %}
+          {% endif %}
+          </div>
+          </div>
+          {% endfor %}
+      {% endfor %}
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "_includes/global/footer" %}
+{% endblock %}

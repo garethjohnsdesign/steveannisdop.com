@@ -1,0 +1,26 @@
+{% extends "default/_layouts/base" %}
+
+{% block body %}
+
+
+<div class="cell shrink" id="swup-navigation">
+{% block navigation %}
+{% endblock %}
+</div>
+
+<div class="cell auto swup-transition-fade" id="swup-body">
+  <div class="grid-x align-middle" style="min-height: 100%">
+    <div class="cell">
+{% block main %}
+{% endblock %}
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="swup-transition-fade" id="swup-overlay">
+{% include "_includes/reveal/navigation" %}
+</div>
+<!-- End Navigation -->
+
+{% endblock %}

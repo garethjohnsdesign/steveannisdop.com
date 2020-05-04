@@ -1,0 +1,39 @@
+{% set bodyClass = 'home' %}
+
+{% if entry.seoTitle | length %}
+{% set seoTitle = entry.seoTitle %}
+{% else %}
+{% set seoTitle = entry.title %}
+{% endif %}
+
+{% if entry.seoDescription | length %}
+{% set seoDescription = entry.seoDescription %}
+{% endif %}
+
+{% set projects = entry.projects.all() %}
+
+{% extends "default/_layouts/site" %}
+
+{% block navigation %}
+{% include "_includes/global/navigation" %}
+{% endblock %}
+
+{% block main %}
+
+<!-- Projects -->
+{% set projectCount = projects|length %}
+<div class="grid-x grid-padding-y {% if projectCount > 2 %}align-left{% else %}align-center{% endif %}">
+  {% for project in projects %}
+    <div class="small-12 medium-6 {% if projectCount > 2 %}xlarge-4{% else %}xlarge-6{% endif %} cell text-center">
+    {% include "_includes/blocks/excerpt" %}
+    </div>
+  {% endfor %}
+</div>
+<!-- End Projects -->
+{% endblock %}
+
+
+{% block footer %}
+{% include "_includes/global/footer" %}
+{% endblock %}
+
