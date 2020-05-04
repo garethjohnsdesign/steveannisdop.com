@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<!-- Home Selected Projects -->
+<div class="grid-x grid-padding-x small-up-1 medium-up-1">
+  {% assign projects = paginator.posts %}
+  {% for project in projects %}
+  <div class="small-12 cell" data-fx="1">
+    <a href="{{ project.url }}" class="h1 block__link" data-img="{{project.image}}">{{ project.client }} <span class="dark-gray">{{ project.title }}</span></a>
+  </div>
+  {% endfor %}
+</div>
+<!-- End Home Selected Projects -->
