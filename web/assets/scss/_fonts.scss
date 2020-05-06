@@ -1,19 +1,29 @@
 @font-face {
-  font-family: 'Marr Sans';
+  font-family: 'Monument Grotesk Regular';
   src: 
-  url('../fonts/marr-sans-regular.woff2') format('woff2'), 
-  url('../fonts/marr-sans-regular.woff') format('woff'),
-  url('../fonts/marr-sans-regular.ttf') format('ttf');
+  url('../fonts/monument-grotesk-regular.woff2') format('woff2'), 
+  url('../fonts/monument-grotesk-regular.woff') format('woff'),
+  url('../fonts/monument-grotesk-regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GT America Condensed Bold';
+  font-family: 'Monument Grotesk Medium';
   src: 
-  url('../fonts/gt-america-condensed-bold.woff2') format('woff2'), 
-  url('../fonts/gt-america-condensed-bold.woff') format('woff'),
-  url('../fonts/gt-america-condensed-bold.ttf') format('ttf');
+  url('../fonts/monument-grotesk-medium.woff2') format('woff2'), 
+  url('../fonts/monument-grotesk-medium.woff') format('woff'),
+  url('../fonts/monument-grotesk-medium.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers Next Pro Regular';
+  src: 
+  url('../fonts/univers-next-pro-regular.woff2') format('woff2'), 
+  url('../fonts/univers-next-pro-regular.woff') format('woff'),
+  url('../fonts/univers-next-pro-regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }

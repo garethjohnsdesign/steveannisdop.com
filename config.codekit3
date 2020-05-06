@@ -1646,52 +1646,76 @@
 		"oAP": "/web/assets/fonts/gt-alpina-light.woff2",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-america-condensed-bold.ttf": {
+	"/web/assets/fonts/monument-grotesk-medium.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-america-condensed-bold.ttf",
+		"oAP": "/web/assets/fonts/monument-grotesk-medium.ttf",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-america-condensed-bold.woff": {
+	"/web/assets/fonts/monument-grotesk-medium.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-america-condensed-bold.woff",
+		"oAP": "/web/assets/fonts/monument-grotesk-medium.woff",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-america-condensed-bold.woff2": {
+	"/web/assets/fonts/monument-grotesk-medium.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-america-condensed-bold.woff2",
+		"oAP": "/web/assets/fonts/monument-grotesk-medium.woff2",
 		"oF": 0
 		},
-	"/web/assets/fonts/marr-sans-regular.ttf": {
+	"/web/assets/fonts/monument-grotesk-regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/marr-sans-regular.ttf",
+		"oAP": "/web/assets/fonts/monument-grotesk-regular.ttf",
 		"oF": 0
 		},
-	"/web/assets/fonts/marr-sans-regular.woff": {
+	"/web/assets/fonts/monument-grotesk-regular.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/marr-sans-regular.woff",
+		"oAP": "/web/assets/fonts/monument-grotesk-regular.woff",
 		"oF": 0
 		},
-	"/web/assets/fonts/marr-sans-regular.woff2": {
+	"/web/assets/fonts/monument-grotesk-regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/marr-sans-regular.woff2",
+		"oAP": "/web/assets/fonts/monument-grotesk-regular.woff2",
+		"oF": 0
+		},
+	"/web/assets/fonts/univers-next-pro-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/web/assets/fonts/univers-next-pro-Regular.ttf",
+		"oF": 0
+		},
+	"/web/assets/fonts/univers-next-pro-Regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/web/assets/fonts/univers-next-pro-Regular.woff",
+		"oF": 0
+		},
+	"/web/assets/fonts/univers-next-pro-Regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/web/assets/fonts/univers-next-pro-Regular.woff2",
 		"oF": 0
 		},
 	"/web/assets/icons/symbol-defs.svg": {

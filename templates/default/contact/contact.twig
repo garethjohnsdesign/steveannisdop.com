@@ -22,10 +22,10 @@
 <div class="grid-container">
 
     {% for region in entry.regions.all()  %}
-    <div class="grid-x grid-padding-x grid-padding-y align-center border-bottom">
+    <div class="grid-x grid-padding-x grid-padding-y align-center">
 
       <div class="small-12 medium-3 cell">
-        <div class="sans-bold text-uppercase">{{region.header}}</div>
+        <div class="dark-gray">{{region.header}}</div>
         {% if region.company|length %}
           {% for company in region.company %}
             <div class="margin-top-1"><a href="{{ company.link }}">{{ company.company }}</a></div>
@@ -38,7 +38,7 @@
         {% if region.contact|length %}
           {% for contact in region.contact %}
           <div class="cell medium-6 large-4">
-            {% if contact.department|length %}<div>{{ contact.department }}</div>{% endif %}
+            {% if contact.department|length %}<div class="dark-gray">{{ contact.department }}</div>{% endif %}
             <div>{{ contact.name }}</div>
             <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
           </div>
@@ -53,7 +53,7 @@
     <!-- Terms and Privacy -->
     <div class="grid-x grid-padding-x grid-padding-y align-justify">
       <div class="shrink cell">
-        <ul class="menu simple">
+        <ul class="menu simple dark-gray">
          {% for block in socials.socials.all() %}
           {% switch block.type %}
             {% case "instagram" %}
@@ -64,10 +64,8 @@
           {% endfor %}
          <li><a href="/terms">Terms</a></li>
          <li><a href="/privacy-policy">Privacy</a></li>
+         <li><a href="https://www.garethjohnsdesign.com" class="dark-gray">Site by Reformation</a></li>
         </ul>
-      </div>
-      <div class="shrink cell">
-        <a href="https://www.garethjohnsdesign.com">Site by Reformation</a>
       </div>
     </div>
     <!-- End Terms and Privacy -->

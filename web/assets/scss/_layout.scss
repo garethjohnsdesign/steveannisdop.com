@@ -30,7 +30,7 @@
     padding-top: ($height / $width) * 100%;
   }
  .content {
-    transition: $primary-transition;
+//     transition: $primary-transition;
     z-index: 1;
     position: absolute;
     top: 0;
@@ -350,7 +350,7 @@ p a {
   &,
   &::before,
   &::after {
-    background-color: $primary-color;
+    background-color: $white;
   }
 }
 
@@ -413,9 +413,8 @@ url('/assets/img/arrow-left@3x.png') 3x
   }
   &:hover .content {
     transition: $primary-transition;
-    background: $color--licorice;
-    background-blend-mode: multiply;
-    @include opacity(0.9);
+    background: $black;
+    @include opacity(0.5);
   }
 }
 
@@ -465,7 +464,14 @@ p:last-child {
   @include padding(1, 1, 0, 1);
   }
   z-index: 14;
-  @include padding(2, 2, 1, 2);
+  @include padding(2, 2, 0, 2);
+}
+
+.reveal {
+  @include breakpoint(medium down) {
+  @include padding(1, 1, 1, 1);
+  }
+  @include padding(2, 2, 2, 2);
 }
 
 .border-bottom {
@@ -532,5 +538,23 @@ overflow: hidden;
   }
   &:hover .video {
     @include opacity(1);
+  }
+}
+
+.padding-left {
+padding-left: 0.5rem !important;
+}
+
+.padding {
+  @include breakpoint(small) {
+    @include padding(1, 1, 1, 1);
+  }
+/*
+  @include breakpoint(large) {
+    @include padding(2, 2, 2, 2);
+  }
+*/
+  @include breakpoint(xlarge) {
+    @include padding(2, 2, 2, 2);
   }
 }

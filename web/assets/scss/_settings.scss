@@ -66,13 +66,13 @@
 // ---------
 
 $global-font-size: 100%;
-$global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-font-size: 18px;
+// $global-width: rem-calc(1200);
+$global-width: rem-calc(1600);
 $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-// $dark-gray: #8a8a8a;
-$dark-gray: #222222;
+$dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 /*
@@ -85,7 +85,7 @@ $foundation-palette: (
 );
 */
 $foundation-palette: (
-  primary: $white,
+  primary: #e20814,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -99,12 +99,14 @@ $body-font-color: $white;
 $body-font-family: $sans-regular;
 $body-antialiased: true;
 $global-margin: 1rem;
-$global-padding: 1rem;
+// $global-padding: 1rem;
+$global-padding: 1.5rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
+$global-menu-padding: 0.4rem 0rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
 $global-flexbox: true;
@@ -134,7 +136,8 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+// $breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge xxlarge);
 
 // 3. The Grid
 // -----------
@@ -184,8 +187,10 @@ $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $enable-code-inline: true;
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+// $anchor-color: $primary-color;
+$anchor-color: $white;
+// $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: $primary-color;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -311,8 +316,10 @@ $button-font-weight: null;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+// $button-background: $primary-color;
+$button-background: $white;
+// $button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: $primary-color;
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
@@ -772,6 +779,7 @@ $reveal-background: $black;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
+$reveal-padding: 0;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
 // $reveal-zindex: 1005;
@@ -900,14 +908,18 @@ $topbar-unstack-breakpoint: medium;
 $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
+/*
 $grid-margin-gutters: (
   small: 20px,
   medium: 30px
 );
+*/
 $grid-margin-gutters: (
-  small: 32px,
-  medium: 64px,
-//   large: 92px
+  small: 48px,
+  medium: 48px,
+  large: 48px,
+  xlarge: 64px,
+  xxlarge: 92px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

@@ -30,16 +30,6 @@ $(document).foundation();
 // 3. Loading
 // ----------
 
-$(function() {
-  $("video.video source").each(function() {
-    var sourceFile = $(this).attr("data-src");
-    $(this).attr("src", sourceFile);
-    var video = this.parentElement;
-    video.load();
-    video.play();
-  });
-});
-
 
 tippy('[data-tippy-content]', {
   placement: 'bottom',
@@ -53,7 +43,8 @@ tippy('[data-tippy-content]', {
 // ----------
 
 const player = new Plyr('#player', {
-    /* options */
+  ratio: '16:9',
+  controls: ['play', 'progress', 'mute', 'volume', 'pip', 'airplay', 'fullscreen']
 });
 
 // 5. Hamburger
