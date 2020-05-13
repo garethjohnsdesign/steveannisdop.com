@@ -81,7 +81,7 @@ return [
     'production' => [
 
         'siteUrl' => [
-            'default' => 'https://www.steveannisdop.com',
+            'default' => 'https://steveannis-prod.frb.io',
         ],
 
         'devMode' => false,
