@@ -87,6 +87,8 @@ return [
         'devMode' => false,
         'enableTemplateCaching' => true,
         'allowUpdates' => false,
+
+        'staticAssetsVersion' => time(),
     ],
     
 
