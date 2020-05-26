@@ -558,3 +558,8 @@ padding-left: 0.5rem !important;
     @include padding(2, 2, 2, 2);
   }
 }
+
+
+button {
+  cursor: pointer;
+}

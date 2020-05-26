@@ -1,32 +1,13 @@
-<!-- Mobile Navigation -->
-<div class="grid-x grid-padding-y align-justify align-middle navigation hide-for-large" id="swup-header" style="z-index: 14">
-  <div class="small-10 cell">
-    <a href="/" class="">{% if bodyClass == "project" %}{{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>{% else %}{{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</a>
-  </div>
-  <div class="shrink cell align-middle">
-    <a class="" type="button" aria-label="Navigation" data-toggle="overlayNavigation">
-      <svg class="icon icon-lens"><use xlink:href="/assets/icons/symbol-defs.svg#icon-lens"></use></svg>
-    </a>
-  </div>
-</div>
-<!-- End Mobile Navigation -->
-
 <!-- Desktop Navigation -->
-<div class="grid-x show-for-large align-justify align-middle navigation" id="swup-header" style="z-index: 14">
-  <div class="shrink cell text-center">
-    <a href="/" class="">{% if bodyClass == "project" %}{{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>{% else %}{{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</a>
+<div class="grid-x align-justify align-middle navigation" id="swup-header" style="z-index: 14">
+
+  <div class="auto cell">
+    <button class="white" aria-label="Navigation" data-toggle="overlayNavigation">{% if bodyClass == "project" %}{{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>{% else %}{{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</button>
   </div>
 
-  <div class="shrink cell align-middle">
-    <a class="" type="button" aria-label="Navigation" data-toggle="overlayNavigation">
-      <svg class="icon icon-lens"><use xlink:href="/assets/icons/symbol-defs.svg#icon-lens"></use></svg>
-    </a>
+  <div class="shrink cell">
+    <button class="white" aria-label="Navigation" data-toggle="overlayNavigation"><svg class="icon icon-lens"><use xlink:href="/assets/icons/symbol-defs.svg#icon-lens"></use></svg></button>
   </div>
 
-{#
-  <div class="small-2 cell text-right">
-    <a href="/contact" class="h5 text-uppercase">@</a>
-  </div>
-#}
 </div>
 <!-- End Desktop Navigation -->
