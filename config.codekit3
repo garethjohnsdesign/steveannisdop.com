@@ -7,7 +7,7 @@
 		"uuidString": "EDB44E38-DB9B-408C-B9C2-C572FB45B1A6"
 		}
 	],
-"creatorBuild": "32147",
+"creatorBuild": "32186",
 "files": {
 	"/.env": {
 		"cB": 0,
@@ -1694,28 +1694,28 @@
 		"oAP": "/web/assets/fonts/monument-grotesk-regular.woff2",
 		"oF": 0
 		},
-	"/web/assets/fonts/univers-next-pro-Regular.ttf": {
+	"/web/assets/fonts/univers-next-pro-regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-Regular.ttf",
+		"oAP": "/web/assets/fonts/univers-next-pro-regular.ttf",
 		"oF": 0
 		},
-	"/web/assets/fonts/univers-next-pro-Regular.woff": {
+	"/web/assets/fonts/univers-next-pro-regular.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-Regular.woff",
+		"oAP": "/web/assets/fonts/univers-next-pro-regular.woff",
 		"oF": 0
 		},
-	"/web/assets/fonts/univers-next-pro-Regular.woff2": {
+	"/web/assets/fonts/univers-next-pro-regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-Regular.woff2",
+		"oAP": "/web/assets/fonts/univers-next-pro-regular.woff2",
 		"oF": 0
 		},
 	"/web/assets/icons/symbol-defs.svg": {
@@ -3003,6 +3003,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"default-case-last": {
+			"active": 0,
+			"optionString": ""
+			},
 		"default-param-last": {
 			"active": 0,
 			"optionString": ""
@@ -3415,6 +3419,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-loss-of-precision": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-magic-numbers": {
 			"active": 0,
 			"optionString": "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
@@ -3530,6 +3538,10 @@
 		"no-regex-spaces": {
 			"active": 1,
 			"optionString": ""
+			},
+		"no-restricted-exports": {
+			"active": 0,
+			"optionString": "{'restrictedNamedExports': []}"
 			},
 		"no-restricted-globals": {
 			"active": 0,
@@ -3674,6 +3686,10 @@
 		"no-use-before-define": {
 			"active": 0,
 			"optionString": "{'functions': true, 'classes': true}"
+			},
+		"no-useless-backreference": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-useless-call": {
 			"active": 0,
