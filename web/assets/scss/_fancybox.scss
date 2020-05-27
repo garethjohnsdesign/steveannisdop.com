@@ -383,7 +383,7 @@ color: $white;
 }
 
 .fancybox-progress {
-    background: #ff5268;
+    background: $primary-color;
     height: 2px;
     left: 0;
     position: absolute;
@@ -439,8 +439,7 @@ color: $white;
 
 .fancybox-navigation .fancybox-button {
     background-clip: content-box;
-//     height: 100px;
-    height: 150px;
+    height: 100px;
     opacity: 0;
     position: absolute;
     top: calc(50% - 50px);
