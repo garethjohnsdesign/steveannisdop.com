@@ -1918,6 +1918,19 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/web/assets/scss/_fancybox.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/web/assets/css/_fancybox.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
 	"/web/assets/scss/_fonts.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -2068,7 +2081,7 @@
 		"ec": 1,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/web/assets/scss/css/hamburgers.css",
 		"oF": 0,
 		"oS": 0,

@@ -67,34 +67,25 @@
 <div class="grid-x grid-padding-x grid-padding-y align-center">
   <div class="shrink cell">
   <a class="" data-open="reveal{{entry.id}}"><svg class="icon icon-arrows icon-add"><use xlink:href="/assets/icons/symbol-defs.svg#icon-add"></use></svg></a>
-  <a class="" data-open="reveal{{entry.id}}"><svg class="icon icon-arrows icon-tonality"><use xlink:href="/assets/icons/symbol-defs.svg#icon-tonality"></use></svg></a>
+  <a data-fancybox-trigger="gallery" href="javascript:;"><svg class="icon icon-arrows icon-tonality"><use xlink:href="/assets/icons/symbol-defs.svg#icon-tonality"></use></svg></a>
+
   </div>
 </div>
 <!-- End Credit -->
 
 
-<!-- Images -->
-<div class="grid-container">
-  <div class="grid-x grid-padding-x grid-padding-y align-center">
-
-    {% for image in entry.images %}
-     {% if image.aspectRatio == "landscape" %}
-     <div class="small-12 medium-12 cell">
-      <div class="margin-bottom-2 image--16-9" data-interchange="{% include "_includes/images/contained/16-9/interchange-img-small-12-medium-12" %}"></div>
-     </div>
-     {% elseif image.aspectRatio == "portrait" %}
-     <div class="small-12 medium-6 cell">
-      <div class="margin-bottom-2 image--5-7" data-interchange="{% include "_includes/images/contained/5-7/interchange-img-small-12-medium-12" %}"></div>
-     </div>
-     {% else  %}
-     <div class="small-12 medium-12 cell">
-      <div class="margin-bottom-2 image--16-9" data-interchange="{% include "_includes/images/contained/16-9/interchange-img-small-12-medium-12" %}"></div>
-     </div>
-     {% endif %}
-
-    {% endfor %}
-  </div>
+{% for image in entry.images %}
+<div class="hide">
+<div data-fancybox="gallery">
+    <img data-interchange="{% include "_includes/images/contained/16-9/interchange-img-small-12-medium-12" %}">
 </div>
+</div>
+{% endfor %}
+
+
+
+<!-- Images -->
+
 <!-- End Images -->
 
 <!-- Awards -->

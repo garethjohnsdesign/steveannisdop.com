@@ -53,21 +53,22 @@ const player = new Plyr('#player', {
 // 4. Fancybox
 // ---------------
 
-if (document.querySelector('#gallery')) {
-  $('[data-fancybox="gallery"]').fancybox({
-  animationEffect: "fade",
-  animationDuration: 366,
-  loop: true,
-  arrows: true,
-  infobar: true,
-  buttons: [
-      "slideShow",
-      "fullScreen",
-      "close"
-    ],
-   transitionEffect: "tube"
-  });
-}
+
+$('[data-fancybox="gallery"]').fancybox({
+animationEffect: "fade",
+animationDuration: 366,
+loop: true,
+arrows: true,
+toolbar: true,
+smallBtn:false,
+buttons: [
+    "slideShow",
+    "fullScreen",
+    "close"
+ ],
+});
+
+
 
 // 5. Viewport Height Fix
 // ----------------------
