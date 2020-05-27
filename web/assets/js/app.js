@@ -1,11 +1,13 @@
 // 1. Imports
 // ----------
 
-import $ from "jquery";
+import './jqueryload';
+import 'what-input';
 import Plyr from 'plyr';
 import tippy, {followCursor} from 'tippy.js';
 import Foundation from 'foundation-sites';
 import AOS from 'aos';
+import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 import Swup from 'swup';
 import SwupBodyClassPlugin from "@swup/body-class-plugin";
 import SwupScrollPlugin from '@swup/scroll-plugin';
@@ -47,6 +49,25 @@ const player = new Plyr('#player', {
   controls: ['play', 'progress', 'mute', 'volume', 'pip', 'airplay', 'fullscreen']
 });
 
+
+// 4. Fancybox
+// ---------------
+
+if (document.querySelector('#gallery')) {
+  $('[data-fancybox="gallery"]').fancybox({
+  animationEffect: "fade",
+  animationDuration: 366,
+  loop: true,
+  arrows: true,
+  infobar: true,
+  buttons: [
+      "slideShow",
+      "fullScreen",
+      "close"
+    ],
+   transitionEffect: "tube"
+  });
+}
 
 // 5. Viewport Height Fix
 // ----------------------
