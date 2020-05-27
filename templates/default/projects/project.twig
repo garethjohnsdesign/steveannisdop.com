@@ -65,13 +65,23 @@
 
 <!-- Credits -->
 <div class="grid-x grid-padding-x grid-padding-y align-center">
-
   <div class="shrink cell">
   <a class="" data-open="reveal{{entry.id}}"><svg class="icon icon-arrows icon-add"><use xlink:href="/assets/icons/symbol-defs.svg#icon-add"></use></svg></a>
   </div>
-
 </div>
 <!-- End Credit -->
+
+<!-- Awards -->
+<div class="grid-x grid-padding-x grid-padding-y align-center">
+  <div class="small-12 medium-10 cell text-center">
+    {% if entry.awards|length %}
+      {% for award in entry.awards %}
+        <div>{{ award.award }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+<!-- End Awards -->
 
 <!-- Mobile Pagination -->
 {% if nextEntry %}

@@ -189,7 +189,7 @@ $enable-code-inline: true;
 // $anchor-color: $primary-color;
 $anchor-color: $white;
 // $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-$anchor-color-hover: $primary-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -50%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -781,8 +781,7 @@ $reveal-padding: $global-padding;
 $reveal-padding: 0;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
-// $reveal-zindex: 1005;
-$reveal-zindex: 10;
+$reveal-zindex: 1005;
 $reveal-overlay-background: rgba($black, 0.45);
 
 // 48. Slider

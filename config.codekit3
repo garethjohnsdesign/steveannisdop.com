@@ -1382,6 +1382,14 @@
 		"oAP": "/templates/default/about/about.twig",
 		"oF": 0
 		},
+	"/templates/default/awards/awards.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/default/awards/awards.twig",
+		"oF": 0
+		},
 	"/templates/default/category/category.twig": {
 		"cB": 0,
 		"ft": 8192,
@@ -1428,6 +1436,14 @@
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/templates/default/page/page.twig",
+		"oF": 0
+		},
+	"/templates/default/press/press.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/default/press/press.twig",
 		"oF": 0
 		},
 	"/templates/default/projects/project.twig": {
