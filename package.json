@@ -13,13 +13,13 @@
     "@swup/preload-plugin": "^1.0.3",
     "@swup/scroll-plugin": "^1.0.6",
     "aos": "^2.3.4",
-    "foundation-sites": "^6.6.1",
-    "jquery": "^3.4.1",
+    "foundation-sites": "^6.6.3",
+    "jquery": "^3.5.1",
     "jquery-lazy": "^1.7.10",
     "motion-ui": "^2.0.3",
-    "plyr": "^3.5.10",
+    "plyr": "^3.6.2",
     "swup": "^2.0.9",
-    "tippy.js": "^6.1.0",
-    "what-input": "^5.2.7"
+    "tippy.js": "^6.2.3",
+    "what-input": "^5.2.9"
   }
 }

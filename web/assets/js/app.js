@@ -27,7 +27,7 @@ Foundation.Interchange.SPECIAL_QUERIES['xxlarge-retina'] = 'only screen and (min
 $(document).foundation();
 
 
-// 3. Loading
+// 3. Tippy
 // ----------
 
 
@@ -47,17 +47,8 @@ const player = new Plyr('#player', {
   controls: ['play', 'progress', 'mute', 'volume', 'pip', 'airplay', 'fullscreen']
 });
 
-// 5. Hamburger
-// ------------
 
-var $hamburger = $(".hamburger");
-  $hamburger.on("click", function(e) {
-    $hamburger.toggleClass("is-active");
-    // Do something else, like open/close menu
-  });
-
-
-// 6. Viewport Height Fix
+// 5. Viewport Height Fix
 // ----------------------
 
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -92,7 +83,7 @@ window.addEventListener('load', AOS.refresh);
 
 }
 
-// 8. Page Transitions
+// 7. Page Transitions
 // -------------------
 const options = {
   animationSelector: '[class*="swup-transition-"]',
