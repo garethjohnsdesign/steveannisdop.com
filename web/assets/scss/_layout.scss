@@ -53,9 +53,9 @@
 
 .viewheight {
   min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+//   min-height: calc(var(--vh, 1vh) * 100);
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+//   height: calc(var(--vh, 1vh) * 100);
 }
 
 a {
@@ -345,9 +345,9 @@ p a {
 
 .image--hero {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+//   height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+//   min-height: calc(var(--vh, 1vh) * 100);
   background-size: cover; 
   background-position: 50%;
 }
