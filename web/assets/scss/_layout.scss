@@ -290,6 +290,7 @@ p a {
   @include aspect-ratio (1, 1);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 
@@ -297,42 +298,49 @@ p a {
   @include aspect-ratio (5, 4);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--6-4 {
   @include aspect-ratio (6, 4);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--3-4 {
   @include aspect-ratio (3, 4);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--5-7 {
   @include aspect-ratio (5, 7);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--7-5 {
   @include aspect-ratio (7, 5);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--16-9 {
   @include aspect-ratio (16, 9);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .image--24-1 {
   @include aspect-ratio (2.4, 1);
   background-size: cover; 
   background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 
