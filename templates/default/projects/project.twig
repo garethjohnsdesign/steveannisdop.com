@@ -64,14 +64,22 @@
 
 
 <!-- Credits -->
-<div class="grid-x grid-padding-x grid-padding-y align-center">
-  <div class="shrink cell">
-  <a class="" data-open="reveal{{entry.id}}"><svg class="icon icon-arrows icon-add"><use xlink:href="/assets/icons/symbol-defs.svg#icon-add"></use></svg></a>
-  {% if entry.images|length %}<a data-fancybox-trigger="gallery" href="javascript:;"><svg class="icon icon-arrows icon-tonality"><use xlink:href="/assets/icons/symbol-defs.svg#icon-tonality"></use></svg></a>{% endif %}
+
+
+<div class="grid-x grid-padding-x grid-padding-y grid-margin-y align-center">
+  <div class="small-12 cell text-center">
+  {% if entry.director|length %}<div><span class="dark-gray">Director</span> {{ entry.director }}</div>{% endif %}
+  {% if entry.producer|length %}<div><span class="dark-gray">Producer</span> {{ entry.producer }}</div>{% endif %}
+  {% if entry.productionCompany|length %}<div><span class="dark-gray">Production Company</span> {{ entry.productionCompany }}</div>{% endif %}
+  {% if entry.agency|length %}<div><span class="dark-gray">Agency</span> {{ entry.agency }}</div>{% endif %}
   </div>
 </div>
+
+{#   <a class="" data-open="reveal{{entry.id}}"><svg class="icon icon-arrows icon-add"><use xlink:href="/assets/icons/symbol-defs.svg#icon-add"></use></svg></a> #}
+{#   {% if entry.images|length %}<a data-fancybox-trigger="gallery" href="javascript:;"><svg class="icon icon-arrows icon-tonality"><use xlink:href="/assets/icons/symbol-defs.svg#icon-tonality"></use></svg></a>{% endif %} #}
 <!-- End Credit -->
 
+{#
 {% if entry.images|length %}
 {% for image in entry.images %}
 <div class="hide">
@@ -81,6 +89,7 @@
 </div>
 {% endfor %}
 {% endif %}
+#}
 
 
 <!-- Awards -->

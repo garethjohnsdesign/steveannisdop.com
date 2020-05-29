@@ -1396,22 +1396,6 @@
 		"oAP": "/templates/default/_layouts/site.twig",
 		"oF": 0
 		},
-	"/templates/default/about/about.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/default/about/about.twig",
-		"oF": 0
-		},
-	"/templates/default/awards/awards.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/default/awards/awards.twig",
-		"oF": 0
-		},
 	"/templates/default/category/category.twig": {
 		"cB": 0,
 		"ft": 8192,
@@ -1458,14 +1442,6 @@
 		"hM": 0,
 		"oA": 2,
 		"oAP": "/templates/default/page/page.twig",
-		"oF": 0
-		},
-	"/templates/default/press/press.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/default/press/press.twig",
 		"oF": 0
 		},
 	"/templates/default/projects/project.twig": {
@@ -1644,116 +1620,52 @@
 		"oAP": "/web/assets/favicons/site.webmanifest",
 		"oF": 0
 		},
-	"/web/assets/fonts/gallery.woff": {
+	"/web/assets/fonts/sans-regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gallery.woff",
+		"oAP": "/web/assets/fonts/sans-regular.ttf",
 		"oF": 0
 		},
-	"/web/assets/fonts/gallery.woff2": {
+	"/web/assets/fonts/sans-regular.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gallery.woff2",
+		"oAP": "/web/assets/fonts/sans-regular.woff",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-alpina-light.ttf": {
+	"/web/assets/fonts/sans-regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-alpina-light.ttf",
+		"oAP": "/web/assets/fonts/sans-regular.woff2",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-alpina-light.woff": {
+	"/web/assets/fonts/sans-sc.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-alpina-light.woff",
+		"oAP": "/web/assets/fonts/sans-sc.ttf",
 		"oF": 0
 		},
-	"/web/assets/fonts/gt-alpina-light.woff2": {
+	"/web/assets/fonts/sans-sc.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/gt-alpina-light.woff2",
+		"oAP": "/web/assets/fonts/sans-sc.woff",
 		"oF": 0
 		},
-	"/web/assets/fonts/monument-grotesk-medium.ttf": {
+	"/web/assets/fonts/sans-sc.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-medium.ttf",
-		"oF": 0
-		},
-	"/web/assets/fonts/monument-grotesk-medium.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-medium.woff",
-		"oF": 0
-		},
-	"/web/assets/fonts/monument-grotesk-medium.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-medium.woff2",
-		"oF": 0
-		},
-	"/web/assets/fonts/monument-grotesk-regular.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-regular.ttf",
-		"oF": 0
-		},
-	"/web/assets/fonts/monument-grotesk-regular.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-regular.woff",
-		"oF": 0
-		},
-	"/web/assets/fonts/monument-grotesk-regular.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/monument-grotesk-regular.woff2",
-		"oF": 0
-		},
-	"/web/assets/fonts/univers-next-pro-regular.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-regular.ttf",
-		"oF": 0
-		},
-	"/web/assets/fonts/univers-next-pro-regular.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-regular.woff",
-		"oF": 0
-		},
-	"/web/assets/fonts/univers-next-pro-regular.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/web/assets/fonts/univers-next-pro-regular.woff2",
+		"oAP": "/web/assets/fonts/sans-sc.woff2",
 		"oF": 0
 		},
 	"/web/assets/icons/symbol-defs.svg": {

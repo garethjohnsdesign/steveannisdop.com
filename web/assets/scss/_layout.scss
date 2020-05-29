@@ -200,8 +200,8 @@ html.is-animating .swup-transition-color {
 }
 
 .dark-gray {
-  color: $dark-gray;
-  @include links ($dark-gray, $white);
+  color: rgba($white, 0.25);
+  @include links (rgba($white, 0.25), $white);
 }
 
 .black {
@@ -514,6 +514,19 @@ p:last-child {
   background-color: transparent;
 }
 
+.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: transparent;
+}
+.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: transparent;
+}
+.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: transparent;
+}
+.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: transparent;
+}
+
 .excerpt {
 position: relative;
 overflow: hidden;
@@ -549,11 +562,9 @@ padding-left: 0.5rem !important;
   @include breakpoint(small) {
     @include padding(1, 1, 1, 1);
   }
-/*
   @include breakpoint(large) {
-    @include padding(2, 2, 2, 2);
+    @include padding(1.5, 1.5, 1.5, 1.5);
   }
-*/
   @include breakpoint(xlarge) {
     @include padding(2, 2, 2, 2);
   }

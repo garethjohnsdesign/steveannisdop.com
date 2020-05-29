@@ -68,10 +68,12 @@
 $global-font-size: 100%;
 // $global-width: rem-calc(1200);
 $global-width: rem-calc(1600);
-$global-lineheight: 1.5;
+// $global-lineheight: 1.5;
+$global-lineheight: 1.4;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+// $dark-gray: #8a8a8a;
+$dark-gray: #5a5a5a;
 $black: #0a0a0a;
 $white: #fefefe;
 /*
@@ -913,11 +915,11 @@ $grid-margin-gutters: (
 );
 */
 $grid-margin-gutters: (
-  small: 48px,
+  small: 32px,
   medium: 48px,
   large: 48px,
   xlarge: 64px,
-  xxlarge: 92px
+  xxlarge: 72px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

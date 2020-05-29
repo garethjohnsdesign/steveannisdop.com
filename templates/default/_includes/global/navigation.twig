@@ -2,12 +2,20 @@
 <div class="grid-x align-justify align-middle navigation" id="swup-header">
 
   <div class="auto cell">
-    <button class="white" aria-label="Navigation" data-toggle="overlayNavigation">{% if bodyClass == "project" %}{{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>{% else %}{{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</button>
+    <button class="white text-uppercase" aria-label="Navigation" data-toggle="overlayNavigation">
+    {% if bodyClass == "project" %}
+    {{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>
+    {% elseif bodyClass == "category" %}
+    {{ siteName }} <span class="dark-gray padding-left">{{ category.title }}</span>
+    {% elseif bodyClass == "contact" %}
+    {{ siteName }} <span class="dark-gray padding-left">{{ entry.title }}</span>
+    {% else %}
+    {{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</button>
   </div>
 
   <div class="shrink cell">
 {#     <button class="white" aria-label="Navigation" data-toggle="overlayNavigation"><svg class="icon icon-lens"><use xlink:href="/assets/icons/symbol-defs.svg#icon-lens"></use></svg></button> #}
-    <button class="white" aria-label="Navigation" data-toggle="overlayNavigation">Menu</button>
+    <button class="white text-uppercase" aria-label="Navigation" data-toggle="overlayNavigation">Menu</button>
   </div>
 
 </div>
