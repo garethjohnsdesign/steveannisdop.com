@@ -29,6 +29,17 @@ Foundation.Interchange.SPECIAL_QUERIES['xxlarge-retina'] = 'only screen and (min
 $(document).foundation();
 
 
+$(function() {
+  $("video.video source").each(function() {
+    var sourceFile = $(this).attr("data-src");
+    $(this).attr("src", sourceFile);
+    var video = this.parentElement;
+    video.load();
+    video.play();
+  });
+});
+
+
 // 3. Tippy
 // ----------
 
