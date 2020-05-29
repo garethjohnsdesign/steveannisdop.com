@@ -1,4 +1,4 @@
-{% set bodyClass = 'page' %}
+{% set bodyClass = 'press' %}
 
 {% if entry.seoTitle | length %}
 {% set seoTitle = entry.seoTitle %}
@@ -10,6 +10,12 @@
 {% set seoDescription = entry.seoDescription %}
 {% endif %}
 
+{% set allProjects = craft.entries
+.section('projects')
+.orderBy('postDate desc')
+.limit(null)
+.all() %}
+
 {% extends "_layouts/site" %}
 
 {% block navigation %}
@@ -18,21 +24,34 @@
 
 
 {% block main %}
-<div class="wrapper">
-<div class="grid-container">
 
-  <!-- Copy -->
-  <div class="grid-x grid-padding-x grid-padding-y align-center">
-    <div class="small-12 cell">
-      {{entry.copy}}
-    </div>
+<div class="grid-x grid-padding-x grid-padding-y">
+  <div class="small-12 medium-8 large-6 cell">
+    {{entry.copy}}
   </div>
-  <!-- End Copy -->
+</div>
 
-</div>
-</div>
+{% for date, projects in allProjects | group("postDate|date('Y')") %}
+    <div class="grid-x grid-padding-x grid-padding-y">
+      <div class="small-12 medium-12 cell padding-bottom-0">
+        <div class="margin-bottom-0 dark-gray">{{ date }}</div>
+      </div>
+    </div>
+    {% for project in projects %}
+    <div class="grid-x grid-padding-x">
+    <div class="medium-4 cell">
+      {{ project.title }}<span class="dark-gray padding-left">{{ project.client }}</span>
+    </div>
+    <div class="medium-6 cell">
+      {{ project.director }}<span class="padding-left dark-gray">{{ project.productionCompany }}</span>
+    </div>
+    </div>
+    {% endfor %}
+{% endfor %}
+
+
+
 {% endblock %}
-
 
 {% block footer %}
 {% include "_includes/global/footer" %}

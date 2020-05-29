@@ -93,7 +93,10 @@
   <div class="small-12 medium-10 cell text-center">
     {% if entry.awards|length %}
       {% for award in entry.awards %}
+        <div class="dark-gray">{{ award.year }}</div>
         <div>{{ award.award }}</div>
+        <div>{{ award.category }}</div>
+        <div>{{ award.outcome }}</div>
       {% endfor %}
     {% endif %}
   </div>
@@ -136,11 +139,17 @@
 
       <div class="grid-x grid-padding-x grid-padding-y grid-margin-y align-center">
         <div class="small-12 cell text-center">
-        {{ entry.copy }}
+        {% if entry.director|length %}<div><span class="dark-gray">Director</span> {{ entry.director }}</div>{% endif %}
+        {% if entry.producer|length %}<div><span class="dark-gray">Producer</span> {{ entry.producer }}</div>{% endif %}
+        {% if entry.productionCompany|length %}<div><span class="dark-gray">Production Company</span> {{ entry.productionCompany }}</div>{% endif %}
+        {% if entry.agency|length %}<div><span class="dark-gray">Agency</span> {{ entry.agency }}</div>{% endif %}
+        {% if entry.copy|length %}<div class="margin-top-1">{{ entry.copy }}</div>{% endif %}
+        </div>
+      </div>
 
-
+      <div class="grid-x grid-padding-x grid-padding-y grid-margin-y align-center">
+        <div class="small-12 cell text-center">
         <a class="dark-gray text-uppercase" data-close aria-label="Close modal" type="button">Close</a>
-
         </div>
       </div>
 
