@@ -1,8 +1,18 @@
 <!-- Desktop Navigation -->
-<div class="grid-x align-justify align-middle navigation" id="swup-header">
+<div class="grid-x align-justify navigation" id="swup-header">
 
-  <div class="auto cell">
-    <button class="white text-uppercase" aria-label="Navigation" data-toggle="overlayNavigation">
+  <div class="small-10 cell">
+    <a class="white text-uppercase show-for-small-only" aria-label="Navigation" data-toggle="overlayNavigation">
+    {% if bodyClass == "project" %}
+    {{ entry.title }} <div class="dark-gray">{{ entry.client }}</div>
+    {% elseif bodyClass == "category" %}
+    {{ siteName }} <div class="dark-gray">{{ category.title }}</div>
+    {% elseif bodyClass == "contact" %}
+    {{ siteName }} <div class="dark-gray">{{ entry.title }}</div>
+    {% else %}
+    {{ siteName }} <div class="dark-gray">Cinematographer</div>{% endif %}
+    </a>
+    <a class="white text-uppercase show-for-medium" aria-label="Navigation" data-toggle="overlayNavigation">
     {% if bodyClass == "project" %}
     {{ entry.title }} <span class="dark-gray padding-left">{{ entry.client }}</span>
     {% elseif bodyClass == "category" %}
@@ -10,12 +20,13 @@
     {% elseif bodyClass == "contact" %}
     {{ siteName }} <span class="dark-gray padding-left">{{ entry.title }}</span>
     {% else %}
-    {{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}</button>
+    {{ siteName }} <span class="dark-gray padding-left">Cinematographer</span>{% endif %}
+    </a>
   </div>
 
   <div class="shrink cell">
 {#     <button class="white" aria-label="Navigation" data-toggle="overlayNavigation"><svg class="icon icon-lens"><use xlink:href="/assets/icons/symbol-defs.svg#icon-lens"></use></svg></button> #}
-    <button class="white text-uppercase" aria-label="Navigation" data-toggle="overlayNavigation">Menu</button>
+    <a class="white text-uppercase" aria-label="Navigation" data-toggle="overlayNavigation">Menu</button>
   </div>
 
 </div>

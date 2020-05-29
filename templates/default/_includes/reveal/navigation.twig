@@ -4,7 +4,7 @@
       <ul class="vertical menu">
         {% nav category in craft.categories.group('typeOfProject').all() %}
           <li>
-           <a href="{{ category.url }}" class="" data-toggle="overlayNavigation">{{ category.title }}</a>
+           <a href="{{ category.url }}" data-toggle="overlayNavigation">{{ category.title }}</a>
           </li>
         {% endnav %}
         <li><a href="/contact" data-toggle="overlayNavigation">Contact</a></li>
