@@ -75,32 +75,31 @@
 {% if entry.images|length %}
 {% for image in entry.images %}
 <div class="hide">
-<div data-fancybox="gallery">
-    <img data-interchange="{% include "_includes/images/contained/16-9/interchange-img-small-12-medium-12" %}">
-</div>
+  <div data-fancybox="gallery">
+      <img data-interchange="{% include "_includes/images/contained/16-9/interchange-img-small-12-medium-12" %}">
+  </div>
 </div>
 {% endfor %}
 {% endif %}
 
 
-
-<!-- Images -->
-
-<!-- End Images -->
-
 <!-- Awards -->
-<div class="grid-x grid-padding-x grid-padding-y align-center">
-  <div class="small-12 medium-10 cell text-center">
-    {% if entry.awards|length %}
-      {% for award in entry.awards %}
-        <div class="dark-gray">{{ award.year }}</div>
-        <div>{{ award.award }}</div>
-        <div>{{ award.category }}</div>
-        <div>{{ award.outcome }}</div>
+{% if entry.awards|length %}
+  {% for award in entry.awards %}
+  <div class="grid-x grid-padding-x align-center">
+    <div class="small-12 medium-10 cell">
+  
+      <ul class="menu simple align-center">
+        <li class="dark-gray">{{ award.year }}</li>
+        <li>{{ award.award }}</li>
+        <li>{{ award.category }}</li>
+        <li>{{ award.outcome }}</li>
+      </ul>
+  
+    </div>
+  </div>
       {% endfor %}
     {% endif %}
-  </div>
-</div>
 <!-- End Awards -->
 
 <!-- Mobile Pagination -->
