@@ -567,15 +567,21 @@ padding-left: 0.5rem !important;
 }
 
 .padding {
+/*
   @include breakpoint(small) {
     @include padding(1, 1, 1, 1);
   }
+*/
+/*
   @include breakpoint(large) {
     @include padding(1.5, 1.5, 1.5, 1.5);
   }
+*/
+/*
   @include breakpoint(xlarge) {
     @include padding(2, 2, 2, 2);
   }
+*/
 }
 
 
